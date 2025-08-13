@@ -1,4 +1,0 @@
-const navToggle=document.getElementById('navToggle');const menu=document.getElementById('primary-menu');if(navToggle&&menu){navToggle.addEventListener('click',()=>{const o=menu.classList.toggle('open');navToggle.setAttribute('aria-expanded',o?'true':'false')})}
-const slides=document.querySelectorAll('.carousel .slide');let idx=0;function show(n){slides.forEach((s,i)=>s.classList.toggle('active',i===n))}
-if(slides.length){show(idx);document.querySelector('.carousel .next')?.addEventListener('click',()=>{idx=(idx+1)%slides.length;show(idx)});document.querySelector('.carousel .prev')?.addEventListener('click',()=>{idx=(idx-1+slides.length)%slides.length;show(idx)});setInterval(()=>{idx=(idx+1)%slides.length;show(idx)},6000)}
-const form=document.getElementById('contactForm');if(form){form.addEventListener('submit',()=>{const btn=form.querySelector('button[type="submit"]');if(btn){btn.disabled=true;btn.textContent='Sending...'}})}
