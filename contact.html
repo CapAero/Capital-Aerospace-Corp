@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Contact — Capital Aerospace Corp</title>
+<link rel="canonical" href="https://capaerospace.com/contact.html"/>
+<link rel="icon" href="/assets/logo/logo.svg" type="image/svg+xml"/>
+<meta name="theme-color" content="#D4AF37"/>
+<link rel="stylesheet" href="/assets/css/styles.css"/>
+<script defer src="/assets/js/script.js"></script>
+</head><body>
+<header class="site-header container">
+  <div class="brand"><img src="/assets/logo/logo.svg" alt="Capital Aerospace Corp logo" class="logo" width="200"></div>
+  <nav aria-label="Primary">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" id="navToggle">Menu</button>
+    <ul id="primary-menu" class="menu">
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/fleet.html">Aircraft</a></li>
+      <li><a href="/gallery.html">Gallery</a></li>
+      <li><a href="/team.html">Team</a></li>
+      <li><a href="/careers.html">Careers</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main class="container section">
+  <h1>Contact</h1>
+  <p>Serving Yukon & North/Western Canada.</p>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Reach us directly</h3>
+      <p>Phone: <a href="tel:18673343777">1-867-334-3777</a><br>
+      Email: <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a><br>
+      Address: 192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6</p>
+    </div>
+    <!-- Replace YOUR_FORM_ID with your actual Formspree ID -->
+    <form id="contactForm" class="form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required>
+      </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+      </div>
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+      <input type="hidden" name="_subject" value="Website inquiry — Capital Aerospace Corp">
+      <button class="btn btn-primary" type="submit">Send</button>
+      <p class="muted" style="margin:.5rem 0 0;">Update <code>action</code> with your Formspree ID to enable submissions.</p>
+    </form>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="muted">© 2025 Capital Aerospace Corp. All rights reserved.</p>
+      <p class="muted">192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="footer-links">
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="/terms.html">Terms</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+</body></html>
