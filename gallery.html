@@ -6,46 +6,49 @@
 <meta name="theme-color" content="#D4AF37"/>
 <link rel="stylesheet" href="/assets/css/styles.css"/>
 <script defer src="/assets/js/script.js"></script>
-</head><body>
-<header class="site-header container">
-  <div class="brand"><img src="/assets/logo/logo.svg" alt="Capital Aerospace Corp logo" class="logo" width="200"></div>
-  <nav aria-label="Primary">
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" id="navToggle">Menu</button>
-    <ul id="primary-menu" class="menu">
-      <li><a href="/services.html">Services</a></li>
-      <li><a href="/fleet.html">Aircraft</a></li>
-      <li><a href="/gallery.html">Gallery</a></li>
-      <li><a href="/team.html">Team</a></li>
-      <li><a href="/careers.html">Careers</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-<main class="container section">
-  <h1>Gallery</h1>
-  <div class="gallery-grid">
-  <a class="gallery-item" href="/assets/images/hero-01.jpg"><img src="/assets/images/thumbs/hero-01.jpg" alt="Helicopter photo 1" loading="lazy"></a>
-  <a class="gallery-item" href="/assets/images/hero-02.jpg"><img src="/assets/images/thumbs/hero-02.jpg" alt="Helicopter photo 2" loading="lazy"></a>
-  <a class="gallery-item" href="/assets/images/hero-03.jpg"><img src="/assets/images/thumbs/hero-03.jpg" alt="Helicopter photo 3" loading="lazy"></a>
-  <a class="gallery-item" href="/assets/images/hero-04.jpg"><img src="/assets/images/thumbs/hero-04.jpg" alt="Helicopter photo 4" loading="lazy"></a>
-  <a class="gallery-item" href="/assets/images/hero-05.jpg"><img src="/assets/images/thumbs/hero-05.jpg" alt="Helicopter photo 5" loading="lazy"></a>
-  <a class="gallery-item" href="/assets/images/hero-06.jpg"><img src="/assets/images/thumbs/hero-06.jpg" alt="Helicopter photo 6" loading="lazy"></a>
-  <a class="gallery-item" href="/assets/images/hero-07.jpg"><img src="/assets/images/thumbs/hero-07.jpg" alt="Helicopter photo 7" loading="lazy"></a>
-  </div>
-</main>
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <p class="muted">© 2025 Capital Aerospace Corp. All rights reserved.</p>
-      <p class="muted">192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6</p>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/"><img src="assets/logo/logo.svg" alt=""><span class="name">Capital Aerospace Corp.</span></a>
+      <nav class="menu">
+        <a href="/services.html">Services</a>
+        <a href="/fleet.html">Specialization</a>
+        <a href="/gallery.html">Gallery</a>
+        <a href="/team.html">Team</a>
+        <a href="/careers.html">Careers</a>
+        <a class="btn btn-primary" href="/contact.html">Contact</a>
+      </nav>
     </div>
-    <nav aria-label="Footer">
-      <ul class="footer-links">
-        <li><a href="/privacy.html">Privacy</a></li>
-        <li><a href="/terms.html">Terms</a></li>
-        <li><a href="/sitemap.xml">Sitemap</a></li>
-      </ul>
-    </nav>
-  </div>
-</footer>
-</body></html>
+  </header>
+
+  <section class="hero" style="min-height:38vh;">
+    <div class="container content">
+      <div class="kicker">Gallery</div>
+      <h1>Recent field work & aircraft</h1>
+      <p>Images from maintenance activities and utility operations across Yukon and the North.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery">
+        <a class="thumb" href="assets/images/hero-01.jpg"><img src="assets/images/thumbs/hero-01.jpg" alt=""></a>
+        <a class="thumb" href="assets/images/hero-02.jpg"><img src="assets/images/thumbs/hero-02.jpg" alt=""></a>
+        <a class="thumb" href="assets/images/hero-03.jpg"><img src="assets/images/thumbs/hero-03.jpg" alt=""></a>
+        <a class="thumb" href="assets/images/hero-04.jpg"><img src="assets/images/thumbs/hero-04.jpg" alt=""></a>
+        <a class="thumb" href="assets/images/hero-05.jpg"><img src="assets/images/thumbs/hero-05.jpg" alt=""></a>
+        <a class="thumb" href="assets/images/hero-06.jpg"><img src="assets/images/thumbs/hero-06.jpg" alt=""></a>
+        <a class="thumb" href="assets/images/hero-07.jpg"><img src="assets/images/thumbs/hero-07.jpg" alt=""></a>
+      </div>
+      <div class="small" style="margin-top:.8rem">Click any image to open full size.</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><img src="assets/logo/logo.svg" alt="" style="height:34px;margin-bottom:.6rem"><div class="small">© <span id="y"></span> Capital Aerospace Corp.</div></div>
+      <div class="small">192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6 · Service area: Yukon & North/Western Canada<br>Phone <a href="tel:+18673343777">1-867-334-3777</a> · <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a></div>
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>

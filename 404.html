@@ -1,3 +1,38 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found</title><link rel="stylesheet" href="/assets/css/styles.css" /></head>
-<body><main class="container section"><h1>404 — Page not found</h1><p><a class="btn btn-primary" href="/">Go home</a></p></main></body></html>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/"><img src="assets/logo/logo.svg" alt=""><span class="name">Capital Aerospace Corp.</span></a>
+      <nav class="menu">
+        <a href="/services.html">Services</a>
+        <a href="/fleet.html">Specialization</a>
+        <a href="/gallery.html">Gallery</a>
+        <a href="/team.html">Team</a>
+        <a href="/careers.html">Careers</a>
+        <a class="btn btn-primary" href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <article class="card" style="max-width:680px;margin:auto;text-align:center">
+        <h1>Page not found</h1>
+        <p class="lead">The link may be broken or the page moved. Head back to the homepage or get in touch.</p>
+        <div style="margin-top:1rem">
+          <a class="btn btn-primary" href="/">Go to homepage</a>
+          <a class="btn btn-ghost" href="/contact.html">Contact us</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><img src="assets/logo/logo.svg" alt="" style="height:34px;margin-bottom:.6rem"><div class="small">© <span id="y"></span> Capital Aerospace Corp.</div></div>
+      <div class="small">192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6 · Service area: Yukon & North/Western Canada<br>Phone <a href="tel:+18673343777">1-867-334-3777</a> · <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a></div>
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
