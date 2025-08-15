@@ -64,3 +64,110 @@
   </div>
 </footer>
 </body></html>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/">
+        <img src="assets/logo/logo.svg" alt="Capital Aerospace Corp">
+        <span class="name">Capital Aerospace Corp.</span>
+      </a>
+      <nav class="menu">
+        <a href="/services.html">Services</a>
+        <a href="/fleet.html">Specialization</a>
+        <a href="/gallery.html">Gallery</a>
+        <a href="/team.html">Team</a>
+        <a href="/careers.html">Careers</a>
+        <a class="btn btn-primary" href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container content">
+      <div class="kicker">Utility Helicopter Maintenance & Field Support</div>
+      <h1>Mission-ready maintenance across Yukon & North/Western Canada</h1>
+      <p>From scheduled inspections to complex rebuilds, our technicians keep Airbus AS350, Bell 206 series, and Bell 407 aircraft flying safely and efficiently—wherever your mission takes you.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/services.html">Explore Services</a>
+        <a class="btn btn-ghost" href="/contact.html">Request Field Support</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">What we do</h2>
+      <p class="lead reveal">Full-spectrum maintenance: scheduled inspections, AOG troubleshooting, custom equipment installations, major 12-year and annual inspections, paint refinishing, and bespoke rebuilds tailored to owner and operator requirements. We deploy maintenance teams directly to your location to minimize downtime.</p>
+      <div class="grid grid-3" style="margin-top:1.2rem">
+        <article class="card reveal">
+          <span class="badge">Planned Maintenance</span>
+          <h3>Scheduled & Annuals</h3>
+          <p>Planned inspections and comprehensive documentation to keep availability high.</p>
+        </article>
+        <article class="card reveal">
+          <span class="badge">Rapid Response</span>
+          <h3>AOG & Field Troubleshooting</h3>
+          <p>Teams deploy quickly to remote sites across the North to resolve issues on-wing.</p>
+        </article>
+        <article class="card reveal">
+          <span class="badge">Custom Work</span>
+          <h3>Installs, Paint & Rebuilds</h3>
+          <p>Owner-specific modifications, complete paint refinishing, and bespoke rebuilds.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container reveal">
+      <h2>Aircraft Specialization</h2>
+      <div class="pills">
+        <span class="pill">Airbus AS350 – all variants</span>
+        <span class="pill">Bell 206 series</span>
+        <span class="pill">Bell 407</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">Recent work</h2>
+      <div class="gallery">
+        <a class="thumb reveal" href="/gallery.html"><img src="assets/images/thumbs/hero-01.jpg" alt=""></a>
+        <a class="thumb reveal" href="/gallery.html"><img src="assets/images/thumbs/hero-02.jpg" alt=""></a>
+        <a class="thumb reveal" href="/gallery.html"><img src="assets/images/thumbs/hero-03.jpg" alt=""></a>
+        <a class="thumb reveal" href="/gallery.html"><img src="assets/images/thumbs/hero-04.jpg" alt=""></a>
+        <a class="thumb reveal" href="/gallery.html"><img src="assets/images/thumbs/hero-05.jpg" alt=""></a>
+        <a class="thumb reveal" href="/gallery.html"><img src="assets/images/thumbs/hero-06.jpg" alt=""></a>
+      </div>
+      <div class="band reveal">
+        <div>
+          <div class="kicker">Need a maintenance team on site?</div>
+          <div class="small">We deploy across Yukon & North/Western Canada for field support.</div>
+        </div>
+        <a class="btn btn-primary" href="/contact.html">Request Support</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <img src="assets/logo/logo.svg" alt="" style="height:34px;margin-bottom:.6rem">
+        <div class="small">© <span id="y"></span> Capital Aerospace Corp.</div>
+      </div>
+      <div class="small">
+        192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6 · Service area: Yukon & North/Western Canada<br>
+        Phone <a href="tel:+18673343777">1-867-334-3777</a> · <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+    const obs=new IntersectionObserver(es=>es.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}
+    }),{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  </script>
+</body>
