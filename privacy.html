@@ -1,37 +1,61 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Privacy Policy — Capital Aerospace Corp</title>
-<link rel="canonical" href="https://capaerospace.com/privacy.html"/>
-<link rel="icon" href="/assets/logo/logo.svg" type="image/svg+xml"/>
-<meta name="theme-color" content="#D4AF37"/>
-<link rel="stylesheet" href="/assets/css/styles.css"/>
-<script defer src="/assets/js/script.js"></script>
-</head><body><header class="site-header container">
-  <div class="brand"><img src="/assets/logo/logo.svg" alt="Capital Aerospace Corp logo" class="logo" width="200"></div>
-  <nav aria-label="Primary">
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" id="navToggle">Menu</button>
-    <ul id="primary-menu" class="menu">
-      <li><a href="/services.html">Services</a></li>
-      <li><a href="/fleet.html">Aircraft</a></li>
-      <li><a href="/gallery.html">Gallery</a></li>
-      <li><a href="/team.html">Team</a></li>
-      <li><a href="/careers.html">Careers</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header><main class="container section"><h1>Privacy Policy</h1>
-<p>Last updated: 2025-08-13</p><p>This template is not legal advice.</p></main><footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <p class="muted">© 2025 Capital Aerospace Corp. All rights reserved.</p>
-      <p class="muted">192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6</p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Capital Aerospace Corp</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Capital Aerospace Corp">
+        <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp Logo" class="logo_img">
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="fleet.html">Aircraft</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a class="btn" href="contact.html">Contact</a>
+      </nav>
     </div>
-    <nav aria-label="Footer">
-      <ul class="footer-links">
-        <li><a href="/privacy.html">Privacy</a></li>
-        <li><a href="/terms.html">Terms</a></li>
-        <li><a href="/sitemap.xml">Sitemap</a></li>
-      </ul>
-    </nav>
-  </div>
-</footer></body></html>
+  </header>
+
+  <main id="main" class="container section prose">
+    <h1>Privacy Policy</h1>
+    <p>We respect your privacy and only collect the minimum information required to respond to your inquiries.</p>
+    
+    <h2>Information We Collect</h2>
+    <ul>
+      <li>Contact details submitted through our forms (name, email, phone, message).</li>
+      <li>Basic analytics to improve site performance.</li>
+    </ul>
+    
+    <h2>How We Use Your Information</h2>
+    <p>We use your information to communicate with you about services and projects and to improve this site.</p>
+    
+    <h2>Contact</h2>
+    <p>For questions, email <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a>.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-mini">
+      <p>© <span id="y"></span> Capital Aerospace Corp</p>
+      <p>
+        <a href="index.html">Home</a> · 
+        <a href="privacy.html">Privacy</a> · 
+        <a href="terms.html">Terms</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
