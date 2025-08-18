@@ -1,55 +1,61 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Aircraft Specialization — Capital Aerospace Corp</title>
-<link rel="canonical" href="https://capaerospace.com/fleet.html"/>
-<link rel="icon" href="/assets/logo/logo.svg" type="image/svg+xml"/>
-<meta name="theme-color" content="#D4AF37"/>
-<link rel="stylesheet" href="/assets/css/styles.css"/>
-<script defer src="/assets/js/script.js"></script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aircraft Specialization — Capital Aerospace Corp</title>
+  <meta name="description" content="Specializing in Airbus AS350 (all variants), Bell 206 series, and Bell 407." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/images/favicon.ico" />
+</head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="/"><img src="assets/logo/logo.svg" alt=""><span class="name">Capital Aerospace Corp.</span></a>
-      <nav class="menu">
-        <a href="/services.html">Services</a>
-        <a href="/fleet.html">Specialization</a>
-        <a href="/gallery.html">Gallery</a>
-        <a href="/team.html">Team</a>
-        <a href="/careers.html">Careers</a>
-        <a class="btn btn-primary" href="/contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Capital Aerospace Corp">
+      <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp Logo" class="logo_img">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a class="active" href="fleet.html">Aircraft</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="team.html">Team</a>
+      <a href="careers.html">Careers</a>
+      <a class="btn" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <section class="hero" style="min-height:46vh;">
-    <div class="container content">
-      <div class="kicker">Aircraft Specialization</div>
-      <h1>Airbus AS350 (all variants), Bell 206 series & Bell 407</h1>
-      <p>Depth of experience across the platforms most used in utility operations—covering inspections, troubleshooting, component changes, and configuration work.</p>
-    </div>
-  </section>
+  <main id="main">
+    <section class="page-hero compact">
+      <h1>Aircraft Specialization</h1>
+      <p>Airbus AS350 (all variants), Bell 206 series, and Bell 407</p>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="pills reveal">
-        <span class="pill">Airbus AS350 – all variants</span>
-        <span class="pill">Bell 206A/B/L series</span>
-        <span class="pill">Bell 407</span>
-      </div>
+    <section class="section container grid-3">
+      <article class="card">
+        <h3>Airbus AS350</h3>
+        <p>All variants supported — inspections, troubleshooting, and rebuilds for utility missions.</p>
+      </article>
+      <article class="card">
+        <h3>Bell 206 Series</h3>
+        <p>Maintenance programs, component change, and field repairs to keep operations moving.</p>
+      </article>
+      <article class="card">
+        <h3>Bell 407</h3>
+        <p>End-to-end support from scheduled maintenance to role equipment integration.</p>
+      </article>
+    </section>
+  </main>
 
-      <div class="grid grid-3" style="margin-top:1.2rem">
-        <article class="card reveal"><h3>AS350</h3><p>Inspections, drive train, hydraulics, electrical, avionics, and mission-specific installations.</p></article>
-        <article class="card reveal"><h3>Bell 206 Series</h3><p>Airframe and engine support for short & long-body models in utility roles.</p></article>
-        <article class="card reveal"><h3>Bell 407</h3><p>Planned maintenance and troubleshooting for high-demand operations.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-inner">
-      <div><img src="assets/logo/logo.svg" alt="" style="height:34px;margin-bottom:.6rem"><div class="small">© <span id="y"></span> Capital Aerospace Corp.</div></div>
-      <div class="small">192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6 · Service area: Yukon & North/Western Canada<br>Phone <a href="tel:+18673343777">1-867-334-3777</a> · <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a></div>
+  <footer class="site-footer">
+    <div class="container footer-mini">
+      <p>© <span id="y"></span> Capital Aerospace Corp</p>
+      <p><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
     </div>
   </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
+</html>

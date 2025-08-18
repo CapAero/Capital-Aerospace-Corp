@@ -7,7 +7,7 @@
   "theme_color": "#D4AF37",
   "icons": [
     {
-      "src": "/assets/logo/logo.svg",
+      "src": "/assets/images/capital-logo.svg",
       "sizes": "any",
       "type": "image/svg+xml"
     }

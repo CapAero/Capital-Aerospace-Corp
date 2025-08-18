@@ -1,48 +1,89 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team — Capital Aerospace Corp</title>
-<link rel="canonical" href="https://capaerospace.com/team.html"/>
-<link rel="icon" href="/assets/logo/logo.svg" type="image/svg+xml"/>
-<meta name="theme-color" content="#D4AF37"/>
-<link rel="stylesheet" href="/assets/css/styles.css"/>
-<script defer src="/assets/js/script.js"></script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team — Capital Aerospace Corp</title>
+  <meta name="description" content="Meet the Capital Aerospace Corp team. Profiles are coming soon." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/images/favicon.ico" />
+</head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="/"><img src="assets/logo/logo.svg" alt=""><span class="name">Capital Aerospace Corp.</span></a>
-      <nav class="menu">
-        <a href="/services.html">Services</a>
-        <a href="/fleet.html">Specialization</a>
-        <a href="/gallery.html">Gallery</a>
-        <a href="/team.html">Team</a>
-        <a href="/careers.html">Careers</a>
-        <a class="btn btn-primary" href="/contact.html">Contact</a>
-      </nav>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Transparent header -->
+  <header class="site-header header--transparent">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Capital Aerospace Corp">
+        <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp Logo" class="logo_img">
+      </a>
+      <!-- Hamburger -->
+      <button id="menuBtn" class="hamburger" aria-label="Open menu" aria-controls="offcanvas" aria-expanded="false">☰</button>
     </div>
   </header>
 
-  <section class="hero" style="min-height:40vh;">
-    <div class="container content">
-      <div class="kicker">The Team</div>
-      <h1>Coming Soon</h1>
-      <p>We’re preparing bios and photography for our maintenance leadership and field technicians.</p>
-    </div>
-  </section>
+  <!-- Off-canvas (right) -->
+  <aside id="offcanvas" class="offcanvas" role="dialog" aria-modal="true" aria-labelledby="navTitle" hidden>
+    <h2 id="navTitle" class="sr-only">Site navigation</h2>
+    <nav class="panel-nav" aria-label="Off-canvas">
+      <a href="index.html">Home</a>
+      <a href="our-mission.html">Our mission</a>
+      <a aria-current="page" href="team.html">Team</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="panel-close" aria-label="Close menu">×</button>
+  </aside>
+  <div class="backdrop" data-close-panel hidden></div>
 
-  <section class="section">
-    <div class="container">
-      <article class="card">
-        <h3>Want to be part of the team?</h3>
-        <p class="small">See current opportunities on our <a href="/careers.html">Careers</a> page or reach out directly.</p>
-      </article>
-    </div>
-  </section>
+  <main id="main" class="container section center prose">
+    <header class="page-hero compact">
+      <h1>Team</h1>
+      <p>Profiles and photos are on the way.</p>
+    </header>
 
-  <footer>
-    <div class="container footer-inner">
-      <div><img src="assets/logo/logo.svg" alt="" style="height:34px;margin-bottom:.6rem"><div class="small">© <span id="y"></span> Capital Aerospace Corp.</div></div>
-      <div class="small">192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6 · Service area: Yukon & North/Western Canada<br>Phone <a href="tel:+18673343777">1-867-334-3777</a> · <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a></div>
+    <section class="section">
+      <h2>🚧 Under Construction</h2>
+      <p>Don’t give up on us — we will have this up and running in no time.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Left: legal + contact -->
+      <div>
+        <p>© <span id="y"></span> Capital Aerospace Corp</p>
+        <address>
+          192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6<br>
+          <a href="tel:+18673343777">+1-867-334-3777</a> ·
+          <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a>
+        </address>
+      </div>
+
+      <!-- Center: logo + tagline + disabled staff login -->
+      <div class="center">
+        <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp" class="logo_img">
+        <p class="tagline">Where Precision Fuels Progress</p>
+        <button class="btn" disabled title="Coming soon">Staff Login</button>
+      </div>
+
+      <!-- Right: footer nav -->
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="our-mission.html">Our mission</a>
+        <a aria-current="page" href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+
+  <script>
+    // year stamp
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // NOTE: Off-canvas JS toggle will be added globally later per our plan.
+  </script>
+<script src="assets/js/script.js" defer></script>
 </body>
+</html>

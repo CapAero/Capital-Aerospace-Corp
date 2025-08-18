@@ -1,54 +1,57 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Gallery — Capital Aerospace Corp</title>
-<link rel="canonical" href="https://capaerospace.com/gallery.html"/>
-<link rel="icon" href="/assets/logo/logo.svg" type="image/svg+xml"/>
-<meta name="theme-color" content="#D4AF37"/>
-<link rel="stylesheet" href="/assets/css/styles.css"/>
-<script defer src="/assets/js/script.js"></script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery — Capital Aerospace Corp</title>
+  <meta name="description" content="Photo gallery of our field maintenance and utility helicopter operations." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/images/favicon.ico" />
+</head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="/"><img src="assets/logo/logo.svg" alt=""><span class="name">Capital Aerospace Corp.</span></a>
-      <nav class="menu">
-        <a href="/services.html">Services</a>
-        <a href="/fleet.html">Specialization</a>
-        <a href="/gallery.html">Gallery</a>
-        <a href="/team.html">Team</a>
-        <a href="/careers.html">Careers</a>
-        <a class="btn btn-primary" href="/contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Capital Aerospace Corp">
+      <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp Logo" class="logo_img">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="fleet.html">Aircraft</a>
+      <a class="active" href="gallery.html">Gallery</a>
+      <a href="team.html">Team</a>
+      <a href="careers.html">Careers</a>
+      <a class="btn" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <section class="hero" style="min-height:38vh;">
-    <div class="container content">
-      <div class="kicker">Gallery</div>
-      <h1>Recent field work & aircraft</h1>
-      <p>Images from maintenance activities and utility operations across Yukon and the North.</p>
-    </div>
-  </section>
+  <main id="main">
+    <section class="page-hero compact">
+      <h1>Gallery</h1>
+      <p>Operations across Yukon &amp; North/Western Canada</p>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="gallery">
-        <a class="thumb" href="assets/images/hero-01.jpg"><img src="assets/images/thumbs/hero-01.jpg" alt=""></a>
-        <a class="thumb" href="assets/images/hero-02.jpg"><img src="assets/images/thumbs/hero-02.jpg" alt=""></a>
-        <a class="thumb" href="assets/images/hero-03.jpg"><img src="assets/images/thumbs/hero-03.jpg" alt=""></a>
-        <a class="thumb" href="assets/images/hero-04.jpg"><img src="assets/images/thumbs/hero-04.jpg" alt=""></a>
-        <a class="thumb" href="assets/images/hero-05.jpg"><img src="assets/images/thumbs/hero-05.jpg" alt=""></a>
-        <a class="thumb" href="assets/images/hero-06.jpg"><img src="assets/images/thumbs/hero-06.jpg" alt=""></a>
-        <a class="thumb" href="assets/images/hero-07.jpg"><img src="assets/images/thumbs/hero-07.jpg" alt=""></a>
-      </div>
-      <div class="small" style="margin-top:.8rem">Click any image to open full size.</div>
-    </div>
-  </section>
+    <section class="section container gallery">
+      <figure><img src="assets/images/hero-01.jpg" alt="Utility operation 1" /></figure>
+      <figure><img src="assets/images/hero-02.jpg" alt="Utility operation 2" /></figure>
+      <figure><img src="assets/images/hero-03.jpg" alt="Utility operation 3" /></figure>
+      <figure><img src="assets/images/hero-04.jpg" alt="Utility operation 4" /></figure>
+      <figure><img src="assets/images/hero-05.jpg" alt="Utility operation 5" /></figure>
+      <figure><img src="assets/images/hero-06.jpg" alt="Utility operation 6" /></figure>
+      <figure><img src="assets/images/hero-07.jpg" alt="Utility operation 7" /></figure>
+    </section>
+  </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <div><img src="assets/logo/logo.svg" alt="" style="height:34px;margin-bottom:.6rem"><div class="small">© <span id="y"></span> Capital Aerospace Corp.</div></div>
-      <div class="small">192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6 · Service area: Yukon & North/Western Canada<br>Phone <a href="tel:+18673343777">1-867-334-3777</a> · <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a></div>
+  <footer class="site-footer">
+    <div class="container footer-mini">
+      <p>© <span id="y"></span> Capital Aerospace Corp</p>
+      <p><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
     </div>
   </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
+</html>
+
