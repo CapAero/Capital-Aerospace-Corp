@@ -5,106 +5,121 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Capital Aerospace Corp — Utility Helicopter Maintenance & Field Support</title>
   <meta name="description" content="Utility helicopter maintenance, inspections, rebuilds, and field support across Yukon & North/Western Canada." />
-  <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="icon" href="assets/images/favicon.ico" />
   <link rel="manifest" href="manifest.webmanifest" />
   <meta name="theme-color" content="#0e1318" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+    <a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="Capital Aerospace Corp">
-      <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp Logo" class="logo_img">
-    </a>
-    <nav class="nav" aria-label="Main">
-      <a class="active" href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="fleet.html">Aircraft</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="team.html">Team</a>
-      <a href="careers.html">Careers</a>
-      <a class="btn" href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+  <!-- Transparent header (always) -->
+  <header class="site-header header--transparent">
+    <div class="container header-inner">
+      <!-- Clicking the brand returns Home -->
+      <a class="brand" href="index.html" aria-label="Capital Aerospace Corp">
+        <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp" class="logo_img">
+      </a>
+
+      <!-- Hamburger opens the off-canvas menu -->
+      <button class="hamburger" aria-label="Open menu" aria-controls="offcanvas" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- Off-canvas panel -->
+  <aside class="offcanvas" id="offcanvas" aria-hidden="true">
+  <button class="panel-close" aria-label="Close menu">×</button>
+  <nav class="panel-nav" aria-label="Mobile">
+    <a href="index.html">Home</a>
+    <a href="our-mission.html">Our mission</a>
+    <a href="team.html">Team</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</aside>
+<div class="backdrop" id="backdrop"></div>
 
   <main id="main">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-media">
-        <img src="assets/images/hero-01.jpg" alt="AS350 performing utility work in the Yukon" />
-      </div>
-      <div class="hero-overlay container">
-        <h1>Utility Helicopter Maintenance &amp; Field Support</h1>
-        <p>Serving Yukon &amp; North/Western Canada</p>
-        <p class="lead">Call <a href="tel:+18673343777">1-867-334-3777</a> or email <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a>.</p>
-        <p><a class="btn" href="services.html">Explore Services</a></p>
+    <!-- Intro video hero -->
+    <section class="full-viewport" aria-label="Intro">
+      <video class="intro-video"
+             src="assets/images/hero.mp4"
+             poster="assets/images/hero.jpg"
+             autoplay muted playsinline></video>
+
+      <!-- 5% screen logo that fades after 2s (CSS handles fade) -->
+      <div class="intro-overlay">
+        <img class="intro-logo" src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp">
       </div>
     </section>
 
-    <!-- Value props -->
-    <section class="section container grid-3">
-      <article class="card">
-        <h3>Field-Ready Support</h3>
-        <p>Rapid deployment to remote projects to maximize aircraft availability and mission readiness.</p>
-      </article>
-      <article class="card">
-        <h3>Deep Type Expertise</h3>
-        <p>Airbus AS350 (all variants), Bell 206 series, and Bell 407 — inspections, troubleshooting, and rebuilds.</p>
-      </article>
-      <article class="card">
-        <h3>Safety &amp; Quality</h3>
-        <p>Owner/operator mindset with uncompromising standards and clear communication with crews.</p>
-      </article>
+    <!-- Scroll section 1 -->
+    <section class="section container grid-2 home-intro-follow">
+      <div>
+        <h1>Helicopter Maintenance tailored to you</h1>
+        <p>By optimizing maintenance logistics and prioritizing clear communication, we minimize downtime and provide a dependable process that supports your business's needs.</p>
+      </div>
+      <div>
+        <img src="assets/images/scroll-1.jpg" alt="Field maintenance support in the Yukon">
+      </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta container">
-      <div class="cta-inner">
-        <h2>Need mission-ready maintenance?</h2>
-        <p>We keep you flying with timely, reliable, and safe support.</p>
-        <a class="btn" href="contact.html">Let’s talk</a>
+    <!-- Scroll section 2 -->
+    <section class="section container grid-2">
+      <div>
+        <h2>Engineering Tomorrow’s Solutions</h2>
+        <p>We leverage advanced technology and innovative practices to develop customized maintenance solutions, ensuring each client receives an approach aligned with their unique operational goals.</p>
+      </div>
+      <div>
+        <img src="assets/images/scroll-2.jpg" alt="Engineering and inspection">
+      </div>
+    </section>
+
+    <!-- Scroll section 3 -->
+    <section class="section container grid-2">
+      <div>
+        <h2>Understanding Your Operations</h2>
+        <p>Through a discovery phase, we gain a clear understanding of your fleet, operational challenges, and future goals, enabling us to craft a maintenance solution that strengthens and supports your business.</p>
+      </div>
+      <div>
+        <img src="assets/images/scroll-3.jpg" alt="Understanding customer operations">
       </div>
     </section>
   </main>
 
+  <!-- Footer (single instance) -->
   <footer class="site-footer">
     <div class="container footer-grid">
+      <!-- Left: company/legal -->
       <div>
-        <img class="brand-mark small" src="assets/images/" alt="Capital Aerospace Corp" />
-        <p>Serving Yukon &amp; North/Western Canada</p>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <ul>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="fleet.html">Aircraft</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="careers.html">Careers</a></li>
-          <li><a href="team.html">The Team</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
+        <p>© <span id="y"></span> Capital Aerospace Corp</p>
         <address>
-          Phone <a href="tel:+18673343777">1-867-334-3777</a><br/>
-          Email <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a><br/>
-          192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6
+          192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6<br>
+          <a href="tel:+18673343777">+1-867-334-3777</a> ·
+          <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a>
         </address>
-        <p><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
       </div>
-    </div>
-    <p class="fineprint">© <span id="y"></span> Capital Aerospace Corp. All rights reserved.</p>
+
+      <!-- Center: mark + tagline + disabled button -->
+      <div class="center">
+        <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp" class="logo_img small">
+        <p class="tagline">Where Precision Fuels Progress</p>
+        <button class="btn" disabled title="Coming soon">Staff Login</button>
+      </div>
+
+      <!-- Right: quick nav -->
+      <div class="footer-company">
+  <nav class="footer-nav" aria-label="Footer">
+    <a href="index.html">Home</a>
+    <a href="our-mission.html">Our mission</a>
+    <a href="team.html">Team</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
   </footer>
 
-  <script>
-    // set year
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-  <!-- If you add JS later, keep it in assets/js/script.js and include it below -->
-  <!-- <script src="assets/js/script.js" defer></script> -->
+  <!-- Minimal JS: year + off-canvas behavior -->
+<script src="assets/js/script.js" defer></script>
 </body>
 </html>
-

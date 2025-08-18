@@ -6,76 +6,270 @@
   <title>Contact — Capital Aerospace Corp</title>
   <meta name="description" content="Contact Capital Aerospace Corp for helicopter maintenance and field support." />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    /* === Contact message board overrides (non-destructive) === */
+    .contact-message{ text-align:center; padding:clamp(20px,3vw,36px); }
+    .contact-message h2{ color:#fff; font-size:clamp(1.6rem,2.6vw,2.1rem); margin:0 0 .35rem }
+    .contact-message .muted{ color:#fff; opacity:.9; max-width:60ch; margin:0 auto 1rem; font-size:1.025rem }
+
+    .contact-form{ display:flex; flex-direction:column; gap:14px; max-width:min(680px,92vw); margin:12px auto 0 }
+    .contact-form label{ display:block }
+    .contact-form .input,
+    .contact-form .textarea{
+      width:100%;
+      background:#0b1220; /* deep panel */
+      color:#fff; /* white text */
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:14px;
+      padding:16px 18px; /* bigger touch targets */
+      font-size:1.06rem; line-height:1.45;
+      text-align:center; /* center text as requested */
+    }
+    .contact-form .textarea{ min-height:180px; resize:vertical }
+    .contact-form .input::placeholder,
+    .contact-form .textarea::placeholder{ color:rgba(255,255,255,.66) }
+
+    .contact-form .btn{ align-self:center; padding:14px 22px; font-size:1.05rem }
+  </style>
   <link rel="icon" href="assets/images/favicon.ico" />
+  <style>
+    /* Enhancements for message block */
+    .contact-message {
+      text-align: center;
+      color: #fff;
+      padding: 2rem;
+    }
+    .contact-message h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .contact-message p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #e5e7eb;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .contact-form .input,
+    .contact-form .textarea {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background: #1a1f29;
+      color: #fff;
+    }
+    .contact-form .btn {
+      display: inline-block;
+      background: #f0c04a;
+      color: #111;
+      font-weight: 600;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      margin-top: 1rem;
+      cursor: pointer;
+      border: none;
+    }
+  </style>
+  <style>
+    /* Center the page title only */
+    .page-hero h1{ text-align:center; margin-left:auto; margin-right:auto; }
+  </style>
+  <style>
+    /* Company card: force white text */
+    .company-card { color:#fff; }
+    .company-card h2,
+    .company-card h3,
+    .company-card p,
+    .company-card address { color:#fff; }
+    .company-card a { color:#fff; text-decoration:underline; }
+    .company-card a:hover { opacity:.9; }
+  </style>
+  <style>
+    /* Center and match font for the hero statement below "Contact us" */
+    .page-hero p{
+      text-align:center;
+      color:#fff;
+      font-size:2rem;      /* match "Send a Message" */
+      font-weight:600;     /* h2-like weight */
+      margin-left:auto;
+      margin-right:auto;
+      max-width:65ch;
+    }
+  </style>
+  <style>
+    /* Contact hero: add top space and background image */
+    .page-hero.compact{
+      position:relative;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.25)),
+        url('assets/images/contact-hero.jpg') center/cover no-repeat; /* ← replace path if needed */
+      min-height:clamp(360px,52vh,600px);
+      padding-top:clamp(140px,20vh,240px);  /* bring CONTACT US down */
+      padding-bottom:clamp(40px,8vh,100px);
+    }
+    .page-hero.compact .container{ position:relative; text-align:center; z-index:1 }
+    .page-hero.compact h1,
+    .page-hero.compact p{ color:#fff }
+  </style>
+  <style>
+    /* Bubble borders for the message + company cards only (soft, not rigid) */
+    .bubble-card{
+      border:0;                       /* remove hard border */
+      border-radius:28px;             /* bubble corners */
+      padding:clamp(20px,2.5vw,28px); /* comfortable interior */
+      background:rgba(17,24,39,.66);  /* soft panel on dark bg */
+      box-shadow:
+        0 1px 0 rgba(255,255,255,.06) inset,   /* gentle inner edge */
+        0 0 0 1px rgba(255,255,255,.10),       /* subtle outline */
+        0 14px 44px rgba(0,0,0,.35);           /* soft drop shadow */
+      backdrop-filter: blur(2px);
+    }
+    /* Space so stacked cards don't touch each other */
+    .contact-grid > div{ display:grid; gap:18px; }
+  </style>
+  <style>
+    /* Set full page background to black */
+    html, body { background:#000; }
+  </style>
+  <style>
+    /* Footer center: ensure logo + tagline are perfectly centered */
+    .site-footer .footer-center{ text-align:center; display:flex; flex-direction:column; align-items:center; gap:.4rem }
+    .site-footer .footer-center .logo_img{ display:block; margin:0 auto; }
+    .site-footer .footer-center .tagline{ margin:0; color:#fff }
+
+    /* Match right-edge padding of header hamburger for footer menu */
+    :root{ --edge-pad: 24px; }
+    .site-header .header-inner{ padding-right:var(--edge-pad); } /* noop if already set */
+    .site-footer .footer-right{ padding-right:var(--edge-pad); }
+
+    /* Keep footer grid nicely aligned */
+    .site-footer .footer-grid{ align-items:center; }
+  </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="Capital Aerospace Corp">
-      <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp Logo" class="logo_img">
-    </a>
-    <nav class="nav" aria-label="Main">
+  <!-- Header -->
+  <header class="site-header header--transparent">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Capital Aerospace Corp">
+        <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp Logo" class="logo_img">
+      </a>
+      <button id="menuBtn" class="hamburger" aria-label="Open menu" aria-controls="offcanvas" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- Off-canvas menu -->
+  <aside id="offcanvas" class="offcanvas" role="dialog" aria-modal="true" aria-labelledby="navTitle" hidden>
+    <h2 id="navTitle" class="sr-only">Site navigation</h2>
+    <nav class="panel-nav" aria-label="Off-canvas">
       <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="fleet.html">Aircraft</a>
-      <a href="gallery.html">Gallery</a>
+      <a href="our-mission.html">Our mission</a>
       <a href="team.html">Team</a>
       <a href="careers.html">Careers</a>
-      <a class="active btn" href="contact.html">Contact</a>
+      <a class="active" href="contact.html">Contact</a>
     </nav>
-  </div>
-</header>
+    <button class="panel-close" aria-label="Close menu">×</button>
+  </aside>
+  <div class="backdrop" data-close-panel hidden></div>
 
   <main id="main">
-    <section class="page-hero compact">
-      <h1>Let’s talk about your aircraft</h1>
-      <p>Phone <a href="tel:+18673343777">1-867-334-3777</a> · Email <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a><br>
-      192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6</p>
-    </section>
-
-    <section class="section container grid-2">
+  <header class="page-hero compact">
+    <div class="container">
+      <h1>CONTACT US</h1>
+      <p>Reach out so we can explore maintenance solutions that fit your operation.</p>
+    </div>
+  </header>
+    <div class="grid-2 contact-grid">
       <div>
-        <h2>Send a message</h2>
-        <!-- Option 1: Netlify Forms (works without JavaScript) -->
-        <form name="contact" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact" />
-          <label>Your Name <input type="text" name="name" required></label>
-          <label>Email <input type="email" name="email" required></label>
-          <label>Phone <input type="tel" name="phone"></label>
-          <label>Message <textarea name="message" rows="6" required></textarea></label>
-          <button class="btn" type="submit">Send</button>
-        </form>
+        <section class="card bubble-card contact-message" aria-labelledby="sendMessageTitle">
+          <h2 id="sendMessageTitle">Send a message</h2>
+          <p class="muted">Tell us what you need and how to reach you — we’ll follow up with a clear plan</p>
+          <form class="contact-form" action="#" method="post" novalidate>
+            <label>
+              <span class="sr-only">Your Name</span>
+              <input class="input" type="text" name="name" placeholder="Your Name" autocomplete="name" required aria-required="true">
+            </label>
+            <label>
+              <span class="sr-only">Email</span>
+              <input class="input" type="email" name="email" placeholder="Email" autocomplete="email" required aria-required="true">
+            </label>
+            <label>
+              <span class="sr-only">How can we help?</span>
+              <textarea class="textarea" name="message" placeholder="How can we help?" rows="6"></textarea>
+            </label>
+            <button class="btn" type="submit">Send</button>
+          </form>
+        </section>
 
-        <!-- Option 2: Formspree (uncomment, replace ID) -->
-        <!--
-        <form action="https://formspree.io/f/YOUR_ID" method="POST">
-          <label>Your Name <input type="text" name="name" required></label>
-          <label>Email <input type="email" name="email" required></label>
-          <label>Phone <input type="tel" name="phone"></label>
-          <label>Message <textarea name="message" rows="6" required></textarea></label>
-          <button class="btn" type="submit">Send</button>
-        </form>
-        -->
+        <section class="card bubble-card company-card">
+          <h2>Company</h2>
+          <p><strong>Capital Aerospace Corp</strong></p>
+          <address>
+            <div>192 Condor Rd</div>
+            <div>Whitehorse, Yukon, Canada Y1A 6E6</div>
+          </address>
+
+          <h3>Primary contact</h3>
+          <p><strong>Kevin Beamish</strong></p>
+          <p>
+            Phone: <a href="tel:+18673343777">+1-867-334-3777</a><br>
+            Email: <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a>
+          </p>
+
+          <h3>Service area</h3>
+          <p>Yukon &amp; North/Western Canada</p>
+        </section>
       </div>
 
-      <aside>
-        <h3>Service area</h3>
-        <p>Yukon &amp; North/Western Canada</p>
-        <h3>Direct</h3>
-        <p><a href="tel:+18673343777">1-867-334-3777</a><br>
-        <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a></p>
-      </aside>
-    </section>
+      <!-- Map on the right -->
+      <section class="map card" aria-label="Map of Capital Aerospace Corp">
+        <h2 class="sr-only">Map</h2>
+        <div class="map-square">
+          <iframe
+            title="Capital Aerospace Corp location"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=192%20Condor%20Rd,%20Whitehorse,%20Yukon,%20Canada%20Y1A%206E6&output=embed">
+          </iframe>
+        </div>
+      </section>
+    </div>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-mini">
-      <p>© <span id="y"></span> Capital Aerospace Corp</p>
-      <p><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+    <div class="container footer-grid">
+      <div class="footer-left">
+        <p>© <span id="y"></span> Capital Aerospace Corp</p>
+        <address>
+          192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6<br>
+          <a href="tel:+18673343777">+1-867-334-3777</a> ·
+          <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a>
+        </address>
+      </div>
+      <div class="footer-center">
+        <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp Logo" class="logo_img small">
+        <p class="tagline">Where Precision Fuels Progress</p>
+        <button class="btn" disabled title="Coming soon">Staff Login</button>
+      </div>
+      <div class="footer-right">
+        <nav aria-label="Footer menu" class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="our-mission.html">Our mission</a>
+          <a href="team.html">Team</a>
+          <a href="careers.html">Careers</a>
+          <a aria-current="page" href="contact.html">Contact</a>
+        </nav>
+      </div>
     </div>
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <!-- Shared site JS -->
+  <script src="assets/js/script.js" defer></script>
 </body>
 </html>

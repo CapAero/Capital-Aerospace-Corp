@@ -4,58 +4,98 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy — Capital Aerospace Corp</title>
+  <meta name="description" content="How Capital Aerospace Corp collects and uses information." />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/images/favicon.ico" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  
-  <header class="site-header">
+
+  <!-- Transparent header -->
+  <header class="site-header header--transparent">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Capital Aerospace Corp">
         <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp Logo" class="logo_img">
       </a>
-      <nav class="nav" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="fleet.html">Aircraft</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="team.html">Team</a>
-        <a href="careers.html">Careers</a>
-        <a class="btn" href="contact.html">Contact</a>
-      </nav>
+      <button id="menuBtn" class="hamburger" aria-label="Open menu" aria-controls="offcanvas" aria-expanded="false">☰</button>
     </div>
   </header>
 
+  <!-- Off-canvas (right) -->
+  <aside id="offcanvas" class="offcanvas" role="dialog" aria-modal="true" aria-labelledby="navTitle" hidden>
+    <h2 id="navTitle" class="sr-only">Site navigation</h2>
+    <nav class="panel-nav" aria-label="Off-canvas">
+      <a href="index.html">Home</a>
+      <a href="our-mission.html">Our mission</a>
+      <a href="team.html">Team</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="panel-close" aria-label="Close menu">×</button>
+  </aside>
+  <div class="backdrop" data-close-panel hidden></div>
+
   <main id="main" class="container section prose">
     <h1>Privacy Policy</h1>
-    <p>We respect your privacy and only collect the minimum information required to respond to your inquiries.</p>
-    
+    <p><em>Last updated: <span id="privacy-date">August 2025</span></em></p>
+
     <h2>Information We Collect</h2>
     <ul>
-      <li>Contact details submitted through our forms (name, email, phone, message).</li>
-      <li>Basic analytics to improve site performance.</li>
+      <li>Contact details you provide (e.g., name, email, phone, message).</li>
+      <li>Basic usage analytics to improve site performance (aggregated, non-identifying).</li>
     </ul>
-    
-    <h2>How We Use Your Information</h2>
-    <p>We use your information to communicate with you about services and projects and to improve this site.</p>
-    
+
+    <h2>How We Use Information</h2>
+    <p>We use your information to respond to inquiries, provide services you request, and improve this website.</p>
+
+    <h2>Sharing</h2>
+    <p>We do not sell your personal information. We may share limited data with service providers as needed to operate this site (e.g., hosting). These providers are required to protect your data.</p>
+
+    <h2>Data Retention</h2>
+    <p>We retain information only as long as necessary for the purposes above or as required by law, and then delete or anonymize it.</p>
+
+    <h2>Your Choices</h2>
+    <p>You may contact us to access, correct, or request deletion of your information.</p>
+
     <h2>Contact</h2>
-    <p>For questions, email <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a>.</p>
+    <p>
+      Capital Aerospace Corp<br>
+      192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6<br>
+      <a href="tel:+18673343777">+1-867-334-3777</a> ·
+      <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a>
+    </p>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-mini">
-      <p>© <span id="y"></span> Capital Aerospace Corp</p>
-      <p>
-        <a href="index.html">Home</a> · 
-        <a href="privacy.html">Privacy</a> · 
-        <a href="terms.html">Terms</a>
-      </p>
+    <div class="container footer-grid">
+      <div>
+        <p>© <span id="y"></span> Capital Aerospace Corp</p>
+        <address>
+          192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6<br>
+          <a href="tel:+18673343777">+1-867-334-3777</a> ·
+          <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a>
+        </address>
+      </div>
+      <div class="center">
+        <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp" class="logo_img">
+        <p class="tagline">Where Precision Fuels Progress</p>
+        <button class="btn" disabled title="Coming soon">Staff Login</button>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="our-mission.html">Our mission</a>
+        <a href="team.html">Team</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </footer>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+    // Off-canvas JS will be added globally later
   </script>
+<script src="assets/js/script.js" defer></script>
 </body>
 </html>
+

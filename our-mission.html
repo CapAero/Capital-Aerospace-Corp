@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Terms &amp; Conditions — Capital Aerospace Corp</title>
-  <meta name="description" content="Terms and conditions for using Capital Aerospace Corp’s website." />
+  <title>Our Mission — Capital Aerospace Corp</title>
+  <meta name="description" content="Our mission and values at Capital Aerospace Corp." />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="icon" href="assets/images/favicon.ico" />
 </head>
@@ -17,6 +17,7 @@
       <a class="brand" href="index.html" aria-label="Capital Aerospace Corp">
         <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp Logo" class="logo_img">
       </a>
+      <!-- Hamburger -->
       <button id="menuBtn" class="hamburger" aria-label="Open menu" aria-controls="offcanvas" aria-expanded="false">☰</button>
     </div>
   </header>
@@ -26,7 +27,7 @@
     <h2 id="navTitle" class="sr-only">Site navigation</h2>
     <nav class="panel-nav" aria-label="Off-canvas">
       <a href="index.html">Home</a>
-      <a href="our-mission.html">Our mission</a>
+      <a aria-current="page" href="our-mission.html">Our mission</a>
       <a href="team.html">Team</a>
       <a href="careers.html">Careers</a>
       <a href="contact.html">Contact</a>
@@ -35,34 +36,22 @@
   </aside>
   <div class="backdrop" data-close-panel hidden></div>
 
-  <main id="main" class="container section prose">
-    <h1>Terms &amp; Conditions</h1>
-    <p><em>Last updated: <span id="terms-date">August 2025</span></em></p>
+  <main id="main" class="container section center prose">
+    <header class="page-hero compact">
+      <h1>Our Mission</h1>
+      <p>Building the most dependable helicopter maintenance operation in the North.</p>
+    </header>
 
-    <h2>Use of this Website</h2>
-    <p>This website is provided for general information about Capital Aerospace Corp. By accessing or using the site, you agree to these Terms &amp; Conditions.</p>
-
-    <h2>Intellectual Property</h2>
-    <p>All trademarks, logos, content, text, graphics, and images on this site are the property of Capital Aerospace Corp or its licensors and are protected by applicable laws. You may not copy, modify, distribute, or use any content without prior written permission.</p>
-
-    <h2>No Warranties</h2>
-    <p>The site is provided “as is” and “as available” without warranties of any kind, expressed or implied. We do not warrant that the site will be uninterrupted, secure, or error-free.</p>
-
-    <h2>Limitation of Liability</h2>
-    <p>To the fullest extent permitted by law, Capital Aerospace Corp shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from or related to your use of the site.</p>
-
-    <h2>Third-Party Links</h2>
-    <p>Our site may link to third-party sites or services. We are not responsible for their content, policies, or practices.</p>
-
-    <h2>Changes</h2>
-    <p>We may update these Terms &amp; Conditions periodically. Continued use of the site constitutes acceptance of updated terms.</p>
-
-    <h2>Contact</h2>
-    <p>Questions about these terms? Contact us at <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a>.</p>
+    <section class="section">
+      <h2>🚧 Under Construction</h2>
+      <p>Don’t give up on us — we will have this up and running in no time.</p>
+    </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-grid">
+      <!-- Left: legal + contact -->
       <div>
         <p>© <span id="y"></span> Capital Aerospace Corp</p>
         <address>
@@ -71,14 +60,18 @@
           <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a>
         </address>
       </div>
+
+      <!-- Center: logo + tagline + disabled staff login -->
       <div class="center">
         <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp" class="logo_img">
         <p class="tagline">Where Precision Fuels Progress</p>
         <button class="btn" disabled title="Coming soon">Staff Login</button>
       </div>
+
+      <!-- Right: footer nav -->
       <nav class="footer-nav" aria-label="Footer">
         <a href="index.html">Home</a>
-        <a href="our-mission.html">Our mission</a>
+        <a aria-current="page" href="our-mission.html">Our mission</a>
         <a href="team.html">Team</a>
         <a href="careers.html">Careers</a>
         <a href="contact.html">Contact</a>
@@ -87,8 +80,9 @@
   </footer>
 
   <script>
+    // year stamp
     document.getElementById('y').textContent = new Date().getFullYear();
-    // Off-canvas JS will be added globally later
+    // NOTE: Off-canvas JS toggle will be added globally later per our plan.
   </script>
 <script src="assets/js/script.js" defer></script>
 </body>
