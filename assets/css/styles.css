@@ -52,7 +52,7 @@ h3{font-size:1.15rem}
   display: flex;
   align-items: center;
   justify-content: center;  /* centers the logo */
-  padding: 2rem 0;
+  padding: 3rem 0;
   position: relative;       /* so we can still position menu button later */
 }
 
@@ -71,27 +71,47 @@ h3{font-size:1.15rem}
 /* Hamburger buttons (support both class names) */
 .hamburger,
 .menu-toggle{
-  background:transparent;
-  border:2px solid var(--gold); /* gold border */
-  color:var(--text);
-  font-size:2.5rem; /* size of the ☰ lines */
-  line-height:1;
-  cursor:pointer;
+  background: transparent;
+  border: 2px solid #fff;   /* white border box */
+  color: #fff;              /* makes the ☰ icon lines white */
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
 
-  /* New spacing + shape */
-  padding:.4rem .6rem;  /* space inside border */
-  margin-right:1rem;    /* pushes button inward from right edge */
-  border-radius:8px;    /* square with rounded corners */
+  padding: .4rem .6rem;
+  margin-right: 1rem;
+  border-radius: 8px;       /* rounded square */
 }
 
 /* ---------- Off-canvas (right slide-out) ---------- */
 /* Works for #offcanvas (old) and .offcanvas (new) */
 #offcanvas,
-.offcanvas{
-  position:fixed; top:0; right:0; width:min(90vw,360px); height:100svh;
-  background:rgba(14,19,24,.98); color:#fff; transform:translateX(100%);
-  transition:transform .3s ease; padding:2rem 1.5rem; z-index:1000;
-  border-left:1px solid #222a35;
+.offcanvas {
+  position: fixed;
+  top: 80px;                 /* push it down below header */
+  right: 20px;               /* small gap from right edge */
+  width: 260px;              /* fixed width */
+  height: auto;              /* shrink to fit content */
+  max-height: 80vh;          /* don’t grow too tall */
+  background: rgba(14,19,24,.98);
+  color: #fff;
+  border: 1px solid #222a35;
+  border-radius: 12px;       /* rounded corners for floating look */
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+  transform: translateY(-20px); /* start slightly above */
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s ease;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+/* When opened */
+#offcanvas[open],
+.offcanvas.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 #offcanvas[open],
 .offcanvas.open{ transform:translateX(0) }
@@ -166,7 +186,34 @@ h3{font-size:1.15rem}
 }
 .btn:hover{transform:translateY(-1px);background:#141a24}
 .btn[disabled]{opacity:.55;cursor:not-allowed}
+/* --- Specific button hover colors --- */
+.staff:hover {
+  background: #0ff; /* neon blue */
+  color: #000;
+  box-shadow: 0 0 12px #0ff, 0 0 24px #0ff;
+  transform: scale(1.05);
+}
 
+.customer:hover {
+  background: #0f0; /* neon green */
+  color: #000;
+  box-shadow: 0 0 12px #0f0, 0 0 24px #0f0;
+  transform: scale(1.05);
+}
+
+.learn:hover {
+  background: #fff; /* bright white */
+  color: #000;
+  box-shadow: 0 0 12px #fff, 0 0 24px #fff;
+  transform: scale(1.05);
+}
+
+/* Optional: better keyboard UX */
+.btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(214,178,79,.2);
+}
 /* ---------- Page hero ---------- */
 .page-hero.compact{ padding:2.2rem 0 1rem }
 .page-hero.compact p{ color:var(--muted) }
@@ -281,4 +328,115 @@ h3{font-size:1.15rem}
 
 @keyframes capitalLogoFade {
   to { opacity: 0; visibility: hidden; }
+}
+/* ===== Intro overlay + logo positioning ===== */
+.intro-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;      /* video is visible behind */
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 2000ms ease-in-out;
+}
+
+.intro-overlay .intro-logo{
+  width: 20vmin;                /* ~20% of viewport min dimension */
+  max-width: 220px;             /* cap size on large screens */
+  height: auto;
+  display: block;
+}
+
+/* When JS triggers the fade-out */
+.intro-overlay.fade-out{ opacity: 0; }
+
+/* Hide header logo until intro completes */
+.site-header .logo_img{
+  opacity: 0;
+  transition: opacity 800ms ease-in-out;
+}
+
+/* After intro is done, show header logo */
+body.intro-done .site-header .logo_img{ opacity: 1; }
+
+/* Reduced motion: skip fancy fades */
+@media (prefers-reduced-motion: reduce){
+  .intro-overlay{ transition: none; opacity: 0; }
+  .site-header .logo_img{ opacity: 1; transition: none; }
+}
+/* --- Intro overlay: force full-screen centering & sizing --- */
+.full-viewport { min-height: 100vh !important; }
+
+/* Keep video below overlay */
+.intro-video { position: relative !important; z-index: 0 !important; }
+
+/* Force overlay to true viewport-fixed & centered */
+.intro-overlay{
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  pointer-events: none !important;
+  opacity: 1 !important;
+  transition: opacity 2000ms ease-in-out !important;
+}
+
+/* Control logo size reliably */
+.intro-overlay .intro-logo{
+  width: min(100vmin, 1.1rem) !important; /* ~20–22% of viewport, capped */
+  height: auto !important;
+  display: block !important;
+}
+
+/* If any previous rules tried to absolutely position the logo, neutralize them */
+.intro-overlay img { position: static !important; }
+
+/* When fading out */
+.intro-overlay.fade-out{ opacity: 0 !important; }
+/* Off-canvas panel: center items */
+.offcanvas{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical centering */
+  align-items: center;       /* horizontal centering */
+  text-align: center;        /* text centered */
+}
+
+/* Make nav links larger and more prominent */
+.offcanvas .panel-nav a{
+  font-size: 1.5rem;          /* increase font size */
+  font-weight: 600;           /* bolder text */
+  margin: 12px 0;             /* spacing between items */
+  color: #fff;                /* ensure readable on dark panel */
+  text-decoration: none;
+}
+
+.offcanvas .panel-nav a:hover{
+  color: #d6b24f;             /* gold hover highlight */
+}
+/* --- Kill bottom gap before footer --- */
+
+/* Remove extra space on the last scroll section / section */
+.scroll-section:last-of-type,
+.section:last-of-type {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Tighten footer join (optional: keep a small seam) */
+.site-footer {
+  margin-top: 1.5rem; /* was 3rem; lower if you want zero gap */
+}
+
+/* If an inner .container is adding space, neutralize only on the last block */
+.scroll-section:last-of-type .container,
+.section:last-of-type .container {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }

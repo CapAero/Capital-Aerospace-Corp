@@ -196,3 +196,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2000); // waits 2 seconds, then fade begins
   }
 });
+// ===== Intro sequencing: fade out intro logo, then reveal header logo =====
+(() => {
+  const overlay = document.querySelector('.intro-overlay');
+  const body = document.body;
+
+  // If no overlay (or user prefers reduced motion), just show header immediately.
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!overlay || prefersReduced) {
+    body.classList.add('intro-done');
+    if (overlay) overlay.style.display = 'none';
+    return;
+  }
+
+  // 1) Wait ~2s so the intro logo is visible.
+  const INTRO_VISIBLE_MS = 2000;
+  // 2) Then fade out the overlay (logo).
+  const FADE_MS = 2000;
+
+  setTimeout(() => {
+    // trigger CSS fade-out
+    overlay.classList.add('fade-out');
+
+    // after fade completes, mark intro done & remove overlay from flow
+    setTimeout(() => {
+      body.classList.add('intro-done');     // header logo starts fading in now
+      overlay.style.display = 'none';       // fully hide overlay
+    }, FADE_MS);
+  }, INTRO_VISIBLE_MS);
+})();
