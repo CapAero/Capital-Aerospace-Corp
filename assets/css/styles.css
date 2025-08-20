@@ -12,6 +12,8 @@
   --text:#e7ecf7; --muted:#9cadc6; --border:#1f2937;
   --card:#0e121a; --radius:12px;  --shadow:0 10px 28px rgba(0,0,0,.28);
   --container:min(1100px,92vw);
+  --hamburger-color:#fff;
+  --hamburger-border:#fff;
 }
 
 /* ---------- Base ---------- */
@@ -40,6 +42,14 @@ h3{font-size:1.15rem}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 
 /* ---------- Header (transparent, fixed) ---------- */
+
+/* Per-page hamburger colors (adjust values as you like) */
+body.home      { --hamburger-color:#ffffff; --hamburger-border:#ffffff; }
+body.mission   { --hamburger-color:#000000; --hamburger-border:#000000; }
+body.team      { --hamburger-color:#000000; --hamburger-border:#000000; }
+body.careers   { --hamburger-color:#ffffff; --hamburger-border:#ffffff; }
+body.contact   { --hamburger-color:#fff; --hamburger-border:#fff; }
+
 /* Old pages */
 .site-header.header--transparent{
   position:fixed; inset:0 0 auto 0; z-index:100; background:transparent; border:0;
@@ -52,7 +62,7 @@ h3{font-size:1.15rem}
   display: flex;
   align-items: center;
   justify-content: center;  /* centers the logo */
-  padding: 3rem 0;
+  padding: 1.5rem 0;
   position: relative;       /* so we can still position menu button later */
 }
 
@@ -72,8 +82,8 @@ h3{font-size:1.15rem}
 .hamburger,
 .menu-toggle{
   background: transparent;
-  border: 2px solid #fff;   /* white border box */
-  color: #fff;              /* makes the ☰ icon lines white */
+  border: 2px solid var(--hamburger-border);
+  color: var(--hamburger-color);
   font-size: 2.5rem;
   line-height: 1;
   cursor: pointer;
@@ -153,7 +163,6 @@ h3{font-size:1.15rem}
   opacity: 1;
   transition: opacity 1.5s ease; /* smooth fade */
 }
-
 
 /* Optional skip intro button */
 .skip-intro{
@@ -439,4 +448,79 @@ body.intro-done .site-header .logo_img{ opacity: 1; }
 .section:last-of-type .container {
   padding-bottom: 0 !important;
   margin-bottom: 0 !important;
+}
+/* --- Mobile header fix: swap logo, prevent AOG overlap, no overflow --- */
+@media (max-width: 560px){
+  .header-inner{ padding: 0.9rem 0; }
+
+  /* Mobile-only logo: replace the URL below with your mobile logo file */
+  .site-header .brand .logo_img{
+    content: url('assets/images/logo-mobile.jpg'); /* <-- replace with your mobile logo path */
+    height: 34px; width: auto; max-width: 100%;
+  }
+
+  /* Nudge centered brand slightly right and ensure it can't collide with AOG + hamburger */
+  .site-header .brand{
+    left: 54%;
+    max-width: calc(100% - 220px);
+  }
+
+  /* Compact controls without causing overflow */
+  .hamburger, .menu-toggle{
+    font-size: 1.6rem;
+    padding: .2rem .4rem;
+    margin-right: .4rem;
+    border-width: 1.5px;
+  }
+
+  /* Keep AOG compact and single-line */
+  :is(.aog, .aog-btn, .btn.aog){
+    font-size: .9rem;
+    padding: .35rem .6rem;
+    white-space: nowrap;
+    margin-right: .4rem;
+  }
+}
+
+@media (max-width: 360px){
+  .site-header .brand .logo_img{ height: 32px; }
+  .site-header .brand{ left: 65%; max-width: calc(100% - 240px); }
+  :is(.aog, .aog-btn, .btn.aog){ font-size:.85rem; padding:.3rem .5rem; }
+}
+/* =========================================
+   Careers page — FORCE wider container/bubble
+   ========================================= */
+
+/* 1) Bump the site container width for this page */
+:root { --container-max: 1600px; }
+
+body.careers .container {
+  max-width: var(--container-max, 1600px) !important;
+}
+
+/* 2) Ensure the Apply section uses the full width */
+body.careers .section.container.apply-wrap {
+  max-width: var(--container-max, 1600px) !important;
+  width: 100% !important;
+}
+
+/* 3) Make the message bubble fill the container */
+body.careers .apply-wrap .bubble {
+  display: block;
+  width: 100% !important;
+  max-width: none !important;   /* remove any fixed bubble cap */
+  box-sizing: border-box;
+  min-height: 600px;            /* keep it tall as requested */
+  padding-left: clamp(16px, 3vw, 48px);
+  padding-right: clamp(16px, 3vw, 48px);
+}
+
+/* Optional: add a comfortable max on very large monitors
+   (remove if you truly want edge-to-edge inside the container) */
+@media (min-width: 1920px) {
+  body.careers .apply-wrap .bubble {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

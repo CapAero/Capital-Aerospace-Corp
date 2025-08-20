@@ -7,28 +7,153 @@
   <meta name="description" content="Our mission and values at Capital Aerospace Corp." />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="icon" href="assets/images/favicon.ico" />
+  <style>
+        /* Reset default browser margins */
+    html, body { margin: 0 !important; padding: 0 !important; border: 0 !important; }
+
+    /* Force all buttons and nav items to show pointer cursor immediately */
+    button, .hamburger, .panel-close, .btn, .cta-btn, .footer-nav a, .offcanvas .panel-nav a {
+      cursor: pointer;
+    }
+
+    /* Make intro layers non-interactive so hover/pointer works immediately */
+    .intro-overlay, .intro-video { pointer-events: none; }
+
+
+  /* Sticky footer: keep footer at the bottom when content is short */
+  html, body { height: 100%; }
+  body { min-height: 100%; display: flex; flex-direction: column; }
+  main { flex: 1 0 auto; }
+  .site-footer { flex-shrink: 0; }
+
+  /* Footer compact horizontal layout (default desktop) */
+  .site-footer .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  .site-footer .container > div,
+  .site-footer .footer-company { margin: 0 10px; }
+  .site-footer p, .site-footer address, .site-footer nav { margin: 0; }
+  .site-footer img { max-height: 40px; }
+
+  /* Center block alignment */
+  .site-footer .center {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .site-footer .center img,
+  .site-footer .center p,
+  .site-footer .center a { margin: 4px 0; }
+
+  /* Left-hand address stacked with spacing */
+  .site-footer address { line-height: 1.6; }
+  .site-footer .company-name { font-weight: bold; margin-bottom: 6px; display:block; }
+  .site-footer .address-block { margin-bottom: 6px; display:block; }
+  .site-footer .contact-block a { display:block; }
+
+  /* Footer buttons */
+  .center .btn {margin:5px 0; padding:10px 20px; border:2px solid; border-radius:5px; font-weight:bold;}
+  .center .btn.staff {background:#007BFF; color:#fff; border-color:#007BFF;}
+  .center .btn.customer {background:#28a745; color:#fff; border-color:#28a745;}
+
+  /* Mobile view adjustments */
+  @media (max-width: 768px) {
+    /* Header compact */
+    .site-header .container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+    }
+    .site-header img.logo_img { max-width: 140px; height:auto; }
+    .menu-toggle { font-size: 1.4rem; }
+
+    /* Main content compact */
+    main.container {
+      padding: 10px;
+      text-align: center;
+    }
+    main h1 { font-size: 1.5rem; margin-bottom: 8px; }
+    main p { font-size: 1rem; margin-bottom: 12px; }
+    section.section { padding: 10px 0; }
+
+    /* Footer stacked */
+    .site-footer .container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .footer-nav {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      margin-top:10px;
+    }
+    .footer-nav a { margin:3px 0; }
+  }
+    /* Mobile header & main compaction */
+  @media (max-width: 768px) {
+    /* Header: tighter padding, smaller logo, compact toggle */
+    .site-header .header-inner { padding: 8px 12px; }
+    .brand .logo_img { height: 28px; width: auto; }
+    .menu-toggle { transform: scale(0.9); }
+
+    /* Page container + sections: reduce side/vertical padding */
+    .container { padding-left: 12px; padding-right: 12px; }
+    .page-hero.compact { padding: 24px 0 12px; }
+    .page-hero.compact h1 { font-size: 1.5rem; line-height: 1.2; margin: 0 0 6px; }
+    .page-hero.compact p { font-size: 0.95rem; margin: 0; }
+
+    .section { padding: 16px 0; }
+    .prose { max-width: 100%; }
+    body { overflow-x: hidden; }
+  }
+  /* 1) Kill closed overlays */
+.offcanvas[aria-hidden="true"] { display: none !important; }
+.backdrop[aria-hidden="true"],
+.backdrop[hidden] { display: none !important; }
+
+/* 2) Relax full-viewport sections on mobile */
+@media (max-width: 768px){
+  .full-viewport,
+  .hero,
+  .under-construction {
+    height: auto !important;
+    min-height: 50vh;
+    overflow: visible !important;
+    position: relative !important;
+  }
+}
+.footer-company .footer-nav{ display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; }
+  </style>
 </head>
-<body>
+<body class="mission">
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- Transparent header -->
-  <header class="site-header header--transparent">
+  <!-- Header identical to index.html -->
+  <header class="site-header transparent">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Capital Aerospace Corp">
         <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp Logo" class="logo_img">
       </a>
       <!-- Hamburger -->
-      <button id="menuBtn" class="hamburger" aria-label="Open menu" aria-controls="offcanvas" aria-expanded="false">☰</button>
+       <button id="menuBtn" class="hamburger" aria-label="Open menu" aria-controls="offcanvas" aria-expanded="false">☰</button>
     </div>
   </header>
 
-  <!-- Off-canvas (right) -->
-  <aside id="offcanvas" class="offcanvas" role="dialog" aria-modal="true" aria-labelledby="navTitle" hidden>
+  <!-- Off-canvas (right) identical to index.html -->
+  <aside class="offcanvas" role="dialog" aria-modal="true" aria-labelledby="navTitle" hidden>
     <h2 id="navTitle" class="sr-only">Site navigation</h2>
     <nav class="panel-nav" aria-label="Off-canvas">
       <a href="index.html">Home</a>
-      <a aria-current="page" href="our-mission.html">Our mission</a>
-      <a href="team.html">Team</a>
+      <a aria-current="page" href="our-mission.html">Our Mission</a>
+      <a href="team.html">Our Team</a>
       <a href="careers.html">Careers</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -44,46 +169,40 @@
 
     <section class="section">
       <h2>🚧 Under Construction</h2>
-      <p>Don’t give up on us — we will have this up and running in no time.</p>
+      <p>Don’t give up on us we will have this up and running in no time.</p>
     </section>
   </main>
-
-  <!-- Footer -->
+  
+  <!-- Compact horizontal footer -->
   <footer class="site-footer">
     <div class="container footer-grid">
-      <!-- Left: legal + contact -->
       <div>
-        <p>© <span id="y"></span> Capital Aerospace Corp</p>
-        <address>
-          192 Condor Rd, Whitehorse, Yukon, Canada Y1A 6E6<br>
-          <a href="tel:+18673343777">+1-867-334-3777</a> ·
+        <span class="company-name">© <span id="y"></span> Capital Aerospace Corp</span>
+        <span class="address-block">192 Condor Rd<br>Whitehorse, Yukon, Canada Y1A 6E6</span>
+        <span class="contact-block">
+          <a href="tel:+18673343777">+1-867-334-3777</a>
           <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a>
-        </address>
+        </span>
       </div>
-
-      <!-- Center: logo + tagline + disabled staff login -->
       <div class="center">
-        <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp" class="logo_img">
+        <img src="assets/images/capital-logo.svg" alt="Capital Aerospace Corp" class="logo_img small">
         <p class="tagline">Where Precision Fuels Progress</p>
-        <button class="btn" disabled title="Coming soon">Staff Login</button>
+        <a href="#" class="btn staff" title="Coming soon">Staff Login</a>
+        <a href="#" class="btn customer" title="Coming soon">Customer Portal</a>
       </div>
-
-      <!-- Right: footer nav -->
-      <nav class="footer-nav" aria-label="Footer">
-        <a href="index.html">Home</a>
-        <a aria-current="page" href="our-mission.html">Our mission</a>
-        <a href="team.html">Team</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+      <div class="footer-company">
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="our-mission.html">Our Mission</a>
+          <a href="team.html">Our Team</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // year stamp
-    document.getElementById('y').textContent = new Date().getFullYear();
-    // NOTE: Off-canvas JS toggle will be added globally later per our plan.
-  </script>
-<script src="assets/js/script.js" defer></script>
+  <!-- Minimal JS: year + off-canvas behavior -->
+  <script src="assets/js/script.js" defer></script>
 </body>
 </html>
