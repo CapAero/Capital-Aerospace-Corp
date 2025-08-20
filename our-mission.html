@@ -19,6 +19,8 @@
     /* Make intro layers non-interactive so hover/pointer works immediately */
     .intro-overlay, .intro-video { pointer-events: none; }
 
+  /* Add editable top padding for header */
+  .site-header { padding-top: 20px; } /* Adjust this value as needed */
 
   /* Sticky footer: keep footer at the bottom when content is short */
   html, body { height: 100%; }
@@ -162,16 +164,29 @@
   <div class="backdrop" data-close-panel hidden></div>
 
   <main id="main" class="container section center prose">
-    <header class="page-hero compact">
-      <h1>Our Mission</h1>
-      <p>Building the most dependable helicopter maintenance operation in the North.</p>
-    </header>
+  <header class="page-hero compact">
+    <h1>Our Mission</h1>
+    <p>We empower helicopter operators by eliminating maintenance constraints and leveraging technology to provide dependable solutions that maximize operational freedom</p>
+  </header>
 
-    <section class="section">
-      <h2>🚧 Under Construction</h2>
-      <p>Don’t give up on us we will have this up and running in no time.</p>
-    </section>
-  </main>
+  <!-- Scroll Section 1 -->
+  <section id="mission-sec-1" class="section scroll-section">
+    <h2>Our Approach</h2>
+    <p>Describe your maintenance philosophy, customer communication, and quality standards here. Edit this text as needed—the section will grow to any length.</p>
+  </section>
+
+  <!-- Scroll Section 2 -->
+  <section id="mission-sec-2" class="section scroll-section">
+    <h2>Capabilities & Certifications</h2>
+    <p>List the services you provide, certifications, and specialized experience. Add as many paragraphs, lists, or images as you want; the page will continue to scroll.</p>
+  </section>
+
+  <!-- Scroll Section 3 -->
+  <section id="mission-sec-3" class="section scroll-section">
+    <h2>Serving the North</h2>
+    <p>Share your commitment to reliability in northern operations, logistics, and support. This area can span multiple screens—just keep adding content.</p>
+  </section>
+</main>
   
   <!-- Compact horizontal footer -->
   <footer class="site-footer">

@@ -28,29 +28,97 @@
 
     /* Tighten vertical rhythm */
     .site-header { padding-block: .5rem; }
-    .site-header, .hamburger { color:#ffffff; }
+    .site-header, .hamburger { color:#000000; }
     .site-header .header-inner{ padding-right:var(--edge-pad); }
 
     .page-hero.compact { min-height: 0; padding: .5rem 1rem 0; }
 
     .section.container { max-width: var(--container-max, 1600px); margin: 1.5rem auto; padding: 0 1rem; }
-    .section.container p { font-size:clamp(1.1rem,2vw,1.35rem); line-height:1.6; text-align:center; margin: 0; color:#ffffff; font-weight:bold; }
+    .section.container p { font-size:clamp(1.1rem,2vw,1.35rem); line-height:1.6; text-align:center; margin: 0; color:#000000; font-weight:bold; }
 
-    .apply-wrap{ margin-block: 2rem; text-align:center; }
-    .apply-wrap h2{ margin: 0 0 1rem; color:#ffffff; font-weight:bold; }
+    .apply-wrap h2{ margin: 0 0 calc(1rem + 4px); color:#000000; font-weight:bold; font-size:3.5rem; }
+    .apply-wrap h2{ margin: 0 0 1rem; color:#000000; font-weight:bold; text-align:center; font-size:3.5rem; }
 
     .bubble{ background:var(--bubble-bg); border:2px solid var(--bubble-border); border-radius:2rem; box-shadow:var(--bubble-shadow); padding:clamp(2rem,4vw,3rem); position:relative; max-width:100% !important; width:100%; margin-inline:auto; animation: fadeInUp .7s ease-out both; text-align:center; color:#fff; min-height:600px; display:flex; flex-direction:column; justify-content:center; }
     .bubble::after{ content:""; position:absolute; bottom:-8px; left:50%; transform:translateX(-50%) rotate(45deg); width:18px; height:18px; background:var(--bubble-bg); border-left:2px solid var(--bubble-border); border-bottom:2px solid var(--bubble-border) }
 
     @keyframes fadeInUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
 
-    .career-form .form-group{ margin-bottom:.75rem; color:#fff; text-align:center; }
-    .career-form label { display:block; margin-bottom:.5rem; font-weight:bold; }
-    .career-form textarea, .career-form input[type=file]{ width:100%; }
-    .career-form textarea{ background:#0e151d; color:#fff; border:1px solid #2b3948; border-radius:.75rem; padding:1.25rem; min-height:400px; font-size:clamp(1.1rem,2vw,1.35rem); line-height:1.6; font-weight:bold; text-align:center; }
-    .career-form input[type=file]{ background:#0e151d; color:#fff; border:1px dashed #2b3948; border-radius:.75rem; padding:.6rem; text-align:center; }
-    .career-form .btn{ display:inline-block; margin-top:1rem; padding:8px 16px; border:2px solid #fff; border-radius:6px; font-weight:700; background:transparent; color:#fff; cursor:pointer; white-space:nowrap; }
+    /* Make the form layout centered */
+.career-form { text-align:center; }
 
+/* Ensure width handling for all fields */
+.career-form textarea,
+.career-form input[type=file],
+.career-form input[type=text],
+.career-form input[type=email]{
+  width:100%;
+}
+
+/* Inputs for name/email sizing */
+.career-form input[type=text],
+.career-form input[type=email]{
+  max-width:420px;
+  margin:0 auto;
+  padding:.75rem;
+  font-size:1rem;
+}
+
+/* Textarea style: left-aligned text for writing */
+.career-form textarea{
+  background:#0e151d;
+  color:#fff;
+  border:1px solid #2b3948;
+  border-radius:.75rem;
+  padding:1.25rem;
+  text-align:left;              /* was centered before */
+  min-height:300px;
+  font-size:clamp(1.1rem,2vw,1.35rem);
+  line-height:1.6;
+  font-weight:bold;
+}
+
+/* File input style (compact, centered) */
+.career-form input[type=file]{
+  width:auto;
+  display:inline-block;
+  padding:.5rem .75rem;
+  font-size:1rem;
+  border-radius:.5rem;
+  margin:0 auto;
+}
+
+/* File input visual (keeps your dashed look) */
+.career-form input[type=file]{
+  background:#0e151d;
+  color:#fff;
+  border:1px dashed #2b3948;
+  border-radius:.75rem;
+  padding:.6rem;
+}
+
+/* Larger centered labels for Name & Email */
+.career-form label[for="name"],
+.career-form label[for="email"]{
+  display:block;
+  text-align:center;
+  font-size:clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight:800;
+  margin-bottom:.5rem;
+}
+/* Extra spacing after Email field */
+.career-form .email-group{ margin-bottom: calc(.75rem + 8px); }
+
+/* Focus states for better accessibility */
+.career-form input[type=text]:focus,
+.career-form input[type=email]:focus,
+.career-form textarea:focus,
+.career-form input[type=file]:focus{
+  outline: 2px solid var(--gold, #d6b24f);
+  outline-offset: 2px;
+  border-color: var(--gold, #d6b24f);
+  box-shadow: 0 0 0 3px rgba(214,178,79,.25);
+}
     /* Footer center: ensure logo + tagline are perfectly centered */
     .site-footer .footer-center{ text-align:center; display:flex; flex-direction:column; align-items:center; gap:.4rem }
     .site-footer .footer-center .logo_img{ display:block; margin:0 auto; }
@@ -128,29 +196,39 @@
     <section class="section container apply-wrap" aria-labelledby="applyNow">
       <h2 id="applyNow">Apply Now</h2>
 
-      <div class="bubble">
-        <form name="careers" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="career-form" aria-describedby="applyHelp">
-          <input type="hidden" name="form-name" value="careers">
-          <p id="applyHelp" class="sr-only">Application form is processed by Netlify. Use this form to submit your message and resume.</p>
+<div class="bubble">
+  <form name="careers" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="career-form" aria-describedby="applyHelp">
+    <input type="hidden" name="form-name" value="careers">
+    <p id="applyHelp" class="sr-only">Application form is processed by Netlify. Use this form to submit your message and resume.</p>
 
-          <!-- Honeypot to reduce spam -->
-          <div hidden aria-hidden="true">
-            <label>Don’t fill this out: <input name="bot-field"></label>
-          </div>
+    <!-- Honeypot to reduce spam -->
+    <div hidden aria-hidden="true">
+      <label>Don’t fill this out: <input name="bot-field"></label>
+    </div>
 
-          <div class="form-group">
-            <label for="message">Tell us about yourself</label>
-            <textarea id="message" name="message" placeholder="Write your cover letter here... (skills, certifications, aircraft/engine types, availability)" required></textarea>
-          </div>
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input id="name" type="text" name="name" placeholder="Your full name" required>
+    </div>
 
-          <div class="form-group">
-            <label for="resume">Attach your resume</label>
-            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" />
-          </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" placeholder="name@example.com" required>
+    </div>
 
-          <button type="submit" class="btn">Submit Application</button>
-        </form>
-      </div>
+    <div class="form-group">
+      <label for="message">Tell us about yourself</label>
+      <textarea id="message" name="message" placeholder="Write your cover letter here... (skills, certifications, aircraft/engine types, availability)" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="resume">Attach your resume</label><br>
+      <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" />
+    </div>
+
+    <button type="submit" class="btn">Submit Application</button>
+  </form>
+</div>
     </section>
   </main>
 
