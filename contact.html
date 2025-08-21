@@ -87,6 +87,18 @@
     .company-card address { color:#fff; }
     .company-card a { color:#fff; text-decoration:underline; }
     .company-card a:hover { opacity:.9; }
+    /* Center text in Company Information bubble */
+.company-card {
+  text-align: center;
+}
+.company-card h2,
+.company-card h3,
+.company-card p,
+.company-card address {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
   </style>
   <style>
     /* Center and match font for the hero statement below "Contact us" */
@@ -273,8 +285,13 @@
       <div>
         <section class="card bubble-card contact-message" aria-labelledby="sendMessageTitle">
           <h2 id="sendMessageTitle">Send a message</h2>
-          <p class="muted">Tell us what you need and how to reach you — we’ll follow up with a clear plan</p>
-          <form class="contact-form" action="#" method="post" novalidate>
+          <p class="muted">Tell us what you need and how to reach you and we’ll follow up with a clear path forward</p>
+          <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thanks.html">
+            <input type="hidden" name="form-name" value="contact" />
+            <label class="sr-only" style="position:absolute; left:-9999px; opacity:0;">
+              Don’t fill this out if you’re human:
+              <input name="bot-field" />
+            </label>
             <label>
               <span class="sr-only">Your Name</span>
               <input class="input" type="text" name="name" placeholder="Your Name" autocomplete="name" required aria-required="true">
@@ -284,8 +301,8 @@
               <input class="input" type="email" name="email" placeholder="Email" autocomplete="email" required aria-required="true">
             </label>
             <label>
-              <span class="sr-only">How can we help?</span>
-              <textarea class="textarea" name="message" placeholder="How can we help?" rows="6"></textarea>
+              <span class="sr-only">Company details and how we can help</span>
+              <textarea class="textarea" name="message" placeholder="Company details and how we can help" rows="6"></textarea>
             </label>
             <button class="btn" type="submit">Send</button>
           </form>
