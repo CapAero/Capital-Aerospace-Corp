@@ -20,7 +20,16 @@
     .intro-overlay, .intro-video { pointer-events: none; }
 
   /* Add editable top padding for header */
-  .site-header { padding-top: 20px; } /* Adjust this value as needed */
+  /* Header overlay on hero */
+/* Header overlay on hero with adjustable top pad */
+/* Header overlay on hero with tighter top pad */
+.site-header { 
+  --header-height: clamp(56px, 8vw, 90px);
+  position:absolute; top:0; left:0; right:0; z-index:1000;
+  background: transparent !important; box-shadow:none !important;
+  min-height: var(--header-height);
+  padding-top: var(--header-top-pad, clamp(6px, 1.5vw, 16px));
+} /* Matches Careers spacing */
 
   /* Sticky footer: keep footer at the bottom when content is short */
   html, body { height: 100%; }
@@ -140,7 +149,67 @@
   font-family: Georgia, serif; /* Distinct font */
   font-weight: bold;
 }
-  </style>
+  /* Mission hero background + bubble overlay */
+.mission-hero{ position:relative; overflow:hidden; min-height:100svh; min-height:100vh; width:100vw; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); padding-top: calc(var(--header-height, clamp(56px, 8vw, 90px)) + var(--hero-top-pad, clamp(24px, 6vw, 96px))); }
+.mission-hero .mission-bg{ position:absolute; inset:0; background:center/cover no-repeat; background-image:var(--mission-hero-bg); opacity:.28; z-index:-1; filter:grayscale(10%) contrast(105%); background-attachment:fixed; }
+.mission-hero h1, .mission-hero p{ position:relative; }
+/* Keep hero text clear of header by offsetting the inner content, not the background */
+.mission-hero .hero-content{ padding-top: calc(var(--header-height, 80px) + clamp(12px, 4vw, 64px)) !important; max-width: min(1200px, 94%); margin: 0 auto; }
+.mission-bubble{ position:relative; max-width:min(900px,92%); margin:clamp(12px,2vw,18px) auto 0; padding:clamp(1rem,2.5vw,1.75rem); background:rgba(11,17,23,.85); border:1px solid #2b3948; border-radius:1rem; box-shadow:0 12px 30px rgba(0,0,0,.35); color:#fff; text-align:left; }
+@media (max-width:768px){ .mission-bubble{ padding:1rem; } }
+/* Parallax mobile fallback: disable fixed background on small screens for performance */
+@media (max-width:768px){ .mission-hero .mission-bg{ background-attachment:scroll; } }
+.mission-bubble h3{ margin:0 0 .5rem; font-size:clamp(1.1rem,2vw,1.5rem); font-weight:800; line-height:1.2; }
+
+/* Force transparent main header */
+.site-header.transparent{ background:transparent !important; background-color:transparent !important; box-shadow:none !important; }
+
+/* Pad the hero's first paragraph (outside the bubble) on left/right */
+/* Pad the hero's first paragraph (outside the bubble) on left/right */
+.mission-hero .hero-content > p{ padding-left:clamp(64px,14vw,256px); padding-right:clamp(64px,14vw,256px); }
+/* Ensure no inner header containers paint white */
+.site-header .container, .site-header .header-inner { background:transparent !important; }
+/* Hard override to keep header clear and hero flush to top */
+.site-header, .site-header::before, .site-header::after{ background:transparent !important; background-color:transparent !important; }
+main.container{ margin-top:0 !important; padding-top:0 !important; }
+.page-hero.compact{ margin-top:0 !important; }
+:root{ --header-top-pad: clamp(6px, 1.5vw, 16px); --hero-top-pad: clamp(24px, 6vw, 96px); }
+.mission-hero h1{ margin-top:0; }
+/* Ensure header inner matches declared height */
+.site-header .header-inner{ min-height: var(--header-height, 96px); align-items:center; }
+/* Mobile-friendly text sizing so blocks shrink to fit */
+@media (max-width: 768px){
+  .mission-hero h1{ font-size: clamp(1.4rem, 6vw, 2.25rem); margin: 0 0 .5rem; }
+  .mission-hero .hero-content > p{ font-size: clamp(.95rem, 3.6vw, 1.05rem); }
+  .mission-bubble{ max-width: 96%; }
+}
+/* Two-column bubbles in hero */
+.mission-bubbles{ display:grid; grid-template-columns:minmax(320px,2fr) minmax(260px,1fr); gap:clamp(12px,2.5vw,24px); align-items:start; max-width:min(1200px,94%); margin:clamp(12px,2vw,18px) auto 0; }
+.mission-bubble--left{ max-width:none; }
+.mission-bubble--right{ max-width:none; }
+.mission-bubble h4{ margin:0 0 .5rem; font-size:clamp(1rem,2vw,1.25rem); font-weight:800; line-height:1.2; }
+@media (max-width:900px){ .mission-bubbles{ grid-template-columns:1fr; } .mission-bubble--right{ margin-top:clamp(8px,2vw,12px); } }
+/* Bubble body text should not be bold */
+.page-hero.compact .mission-bubble p{ font-weight:400; }
+/* --- Full-bleed secondary image (flush transition) --- */
+.mission-image-breaker{ position:relative; width:100vw; min-height:100svh; min-height:100vh; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); }
+.mission-image-breaker .mission-bg{ position:absolute; inset:0; background:center/cover no-repeat; background-image:var(--mission-hero2-bg); background-attachment:fixed; }
+@media (max-width:768px){ .mission-image-breaker .mission-bg{ background-attachment:scroll; } }
+
+/* --- Feature bubbles (white bg, black text) --- */
+.feature-list{ display:flex; flex-direction:column; gap:clamp(10px,1.6vw,16px); margin-top:clamp(8px,2vw,16px); }
+.feature-card{ background:#fff; color:#000; border:1px solid #e2e8f0; border-radius:1rem; box-shadow:0 8px 20px rgba(0,0,0,.12); padding:clamp(10px,1.8vw,16px); width:100%; max-width:min(900px,90%); margin:0 auto; }
+.feature-card__row{ display:flex; align-items:flex-start; gap:clamp(10px,1.8vw,16px); }
+.feature-card__icon{ flex:0 0 auto; width:clamp(44px,4.5vw,64px); height:auto; }
+.feature-card__text{ flex:1 1 auto; }
+.feature-card__title{ margin:0 0 4px; font-size:clamp(1rem,2vw,1.25rem); font-weight:800; line-height:1.2; }
+.feature-card p{ margin:0; font-weight:400; }
+/* Scroll 1 background (faded) behind feature cards) */
+#mission-sec-1{ position:relative; margin-top:0; width:100vw; min-height:100svh; min-height:100vh; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); padding:0 !important; isolation:isolate; }
+#mission-sec-1::before{ content:""; position:absolute; inset:0; background:center/cover no-repeat var(--mission-sec1-bg, url('assets/images/mission-hero-2.png')); opacity:.28; z-index:-1; background-attachment:fixed; }
+@media (max-width:768px){ #mission-sec-1::before{ background-attachment:scroll; } }
+#mission-sec-1 > h2:first-child{ margin-top:0; }
+</style>
 </head>
 <body class="mission">
   <a class="skip" href="#main">Skip to content</a>
@@ -154,7 +223,8 @@
       <!-- Hamburger -->
        <button id="menuBtn" class="hamburger" aria-label="Open menu" aria-controls="offcanvas" aria-expanded="false">☰</button>
     </div>
-  </header>
+  
+</header>
 
   <!-- Off-canvas (right) identical to index.html -->
   <aside class="offcanvas" role="dialog" aria-modal="true" aria-labelledby="navTitle" hidden>
@@ -171,27 +241,123 @@
   <div class="backdrop" data-close-panel hidden></div>
 
   <main id="main" class="container section center prose">
-  <header class="page-hero compact">
-    <h1>Our Mission</h1>
-    <p>We empower helicopter operators by eliminating maintenance constraints and leveraging technology to provide dependable solutions that maximize operational freedom</p>
-  </header>
+  <header class="page-hero compact mission-hero" style="--mission-hero-bg:url('assets/images/mission-hero.png');">
+  <div class="mission-bg" aria-hidden="true"></div>
+  <div class="hero-content">
+      <h1>Our Mission</h1>
+    <p>"We empower helicopter operators by eliminating maintenance constraints and leveraging technology to provide dependable solutions that maximize operational freedom"</p>
+  <!-- Overlay bubble under the main mission paragraph -->
+  <div class="mission-bubbles">
+  <div class="mission-bubble mission-bubble--left" role="note">
+    <h3 class="mission-bubble__title">About us</h3>
+    <p>We are a full service AMO that plugs directly into your operation. Our team manages every aspect of helicopter maintenance and business development, including; AOG support, field and heavy maintenance, maintenance planning and forecasting, parts ordering, pilot training, TC compliance, administrative burdens and fleet expansion support. Quality is our core principle and we uphold your brand down to every detail.</p>
+  </div>
+  <div class="mission-bubble mission-bubble--right" role="note">
+    <h4>The People Behind Our Mission</h4>
+    <p>Capital Aerospace was founded to create a healthy, people first focused work environment in aviation. We believe our culture drives success, and we safeguard that ethos with great care</p>
+  </div>
+</div>
+</header>
+
 
   <!-- Scroll Section 1 -->
   <section id="mission-sec-1" class="section scroll-section">
-    <h2>HOW OUR APPROACH IS DIFFERENT</h2>
-    <p>Describe your maintenance philosophy, customer communication, and quality standards here. Edit this text as needed—the section will grow to any length.</p>
+    <h2>WHAT WE TAKE CARE OF</h2>
+    <div class="feature-list">
+      <article class="feature-card">
+        <div class="feature-card__row">
+          <img class="feature-card__icon" src="assets/icons/maintenance.png" alt="Maintenance icon">
+          <div class="feature-card__text">
+            <h3 class="feature-card__title">AOG & General Maintenance</h3>
+            <p>WEBSITE WORK IN PROGRESS</p>
+          </div>
+        </div>
+      </article>
+      <article class="feature-card">
+        <div class="feature-card__row">
+          <img class="feature-card__icon" src="assets/icons/planning.png" alt="Planning icon">
+          <div class="feature-card__text">
+            <h3 class="feature-card__title">Maintenance Planning and Logistics</h3>
+            <p>WEBSITE WORK IN PROGRESS</p>
+          </div>
+        </div>
+      </article>
+      <article class="feature-card">
+        <div class="feature-card__row">
+          <img class="feature-card__icon" src="assets/icons/parts.png" alt="Parts icon">
+          <div class="feature-card__text">
+            <h3 class="feature-card__title">Inventory Control</h3>
+            <p>WEBSITE WORK IN PROGRESS</p>
+          </div>
+        </div>
+      </article>
+      <article class="feature-card">
+        <div class="feature-card__row">
+          <img class="feature-card__icon" src="assets/icons/training.png" alt="Training icon">
+          <div class="feature-card__text">
+            <h3 class="feature-card__title">Operations Staff Training</h3>
+            <p>WEBSITE WORK IN PROGRESS</p>
+          </div>
+        </div>
+      </article>
+      <article class="feature-card">
+        <div class="feature-card__row">
+          <img class="feature-card__icon" src="assets/icons/compliance.png" alt="Compliance icon">
+          <div class="feature-card__text">
+            <h3 class="feature-card__title">Regulatory Compliance</h3>
+            <p>WEBSITE WORK IN PROGRESS</p>
+          </div>
+        </div>
+      </article>
+      <article class="feature-card">
+        <div class="feature-card__row">
+          <img class="feature-card__icon" src="assets/icons/admin.png" alt="Admin icon">
+          <div class="feature-card__text">
+            <h3 class="feature-card__title">Admin & Technical Records</h3>
+            <p>WEBSITE WORK IN PROGRESS</p>
+          </div>
+        </div>
+      </article>
+      <article class="feature-card">
+        <div class="feature-card__row">
+          <img class="feature-card__icon" src="assets/icons/bridge.png" alt="Field icon">
+          <div class="feature-card__text">
+            <h3 class="feature-card__title">Bridging and Helicopter Purchasing</h3>
+            <p>WEBSITE WORK IN PROGRESS</p>
+          </div>
+        </div>
+      </article>
+      <article class="feature-card">
+        <div class="feature-card__row">
+          <img class="feature-card__icon" src="assets/icons/expansion.png" alt="Expansion icon">
+          <div class="feature-card__text">
+            <h3 class="feature-card__title">Fleet Expansion Support and Business Development</h3>
+            <p>WEBSITE WORK IN PROGRESS</p>
+          </div>
+        </div>
+      </article>
+      <article class="feature-card">
+        <div class="feature-card__row">
+          <img class="feature-card__icon" src="assets/icons/safety.png" alt="Safety">
+          <div class="feature-card__text">
+            <h3 class="feature-card__title">Health & Safety Programe</h3>
+            <p>WEBSITE WORK IN PROGRESS</p>
+          </div>
+        </div>
+      </article>
+    </div>
   </section>
 
   <!-- Scroll Section 2 -->
   <section id="mission-sec-2" class="section scroll-section">
-    <h2>Capabilities & Certifications</h2>
-    <p>List the services you provide, certifications, and specialized experience. Add as many paragraphs, lists, or images as you want; the page will continue to scroll.</p>
+    <h2>HOW OUR APPROACH IS DIFFERENT</h2>
+    <p>*****UNDER CONSTRUCTION*****WEBSITE WORK IN PROGRESS</p>
   </section>
 
   <!-- Scroll Section 3 -->
   <section id="mission-sec-3" class="section scroll-section">
-    <h2>Serving the North</h2>
-    <p>Share your commitment to reliability in northern operations, logistics, and support. This area can span multiple screens—just keep adding content.</p>
+    <h2>PRICING</h2>
+    <p>*****UNDER CONSTRUCTION*****WEBSITE WORK IN PROGRESS</p>
   </section>
 </main>
   
