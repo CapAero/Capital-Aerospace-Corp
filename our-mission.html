@@ -165,12 +165,11 @@ main.container{ margin-top:0 !important; padding-top:0 !important; }
 .mission-bubble--left{ max-width:none; }
 .mission-bubble--right{ max-width:none; }
 
-
 /* Specialization inline icons beside text (smaller) */
 .mission-bubble--specialization{ grid-template-columns:1fr; }
 .mission-bubble--specialization .spec-icons{ display:none !important; }
 .mission-bubble--specialization .spec-text p.spec-item{ display:flex; align-items:center; gap:clamp(6px,1vw,10px); margin:0 0 .35rem; }
-.mission-bubble--specialization .spec-text p.spec-item .spec-icon{ width:clamp(20px, 2.5vw, 32px); height:auto; flex:0 0 auto; }
+.mission-bubble--specialization .spec-text p.spec-item .spec-icon{ width:clamp(30px, 2.5vw, 40px); height:auto; flex:0 0 auto; }
 .mission-bubbles .mission-bubble--specialization{ grid-column:1 / -1; }
 .mission-bubble--specialization .spec-text p{ margin:0 0 .35rem; }
 .mission-bubble--specialization .spec-icons{
@@ -188,7 +187,6 @@ main.container{ margin-top:0 !important; padding-top:0 !important; }
 .mission-image-breaker{ position:relative; width:100vw; min-height:100svh; min-height:100vh; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); }
 
 /* Third image scroll (faded) */
-/* Third image scroll (faded) */
 .mission-image-breaker--three .mission-bg{ background-image: url('assets/images/mission-hero-3.png'); opacity:.28; }
 
 .feature-list{ display:flex; flex-direction:column; gap:clamp(10px,1.6vw,16px); margin-top:clamp(8px,2vw,16px); }
@@ -202,21 +200,21 @@ main.container{ margin-top:0 !important; padding-top:0 !important; }
 #mission-sec-1 .feature-card__row{
   display:grid;
   grid-template-columns:1fr auto;
-  grid-template-rows:auto auto; /* ensure title+icon row sits above body row */
+  grid-template-rows:auto auto;
   grid-template-areas:
     "title icon"
     "body  body";
-  align-items:start; /* top-align title & icon */
+  align-items:start;
   column-gap:clamp(10px,1.8vw,16px);
-  row-gap:clamp(6px,1vw,10px); /* spacing between header row and body text */
+  row-gap:clamp(6px,1vw,10px);
 }
 #mission-sec-1 .feature-card__text{ display:contents; }
 #mission-sec-1 .feature-card__title{ grid-area:title; margin:0 0 4px; }
 #mission-sec-1 .feature-card__row p{ grid-area:body; margin:0; }
 #mission-sec-1 .feature-card__icon{
   grid-area:icon;
-  align-self:start; /* keep icon aligned with title, above paragraph */
-  width:clamp(66px, 6.75vw, 96px); /* 50% larger */
+  align-self:start;
+  width:clamp(66px, 6.75vw, 96px);
   height:auto;
 }
 /* Fix: enforce top row for title+icon and move paragraph below */
@@ -237,11 +235,11 @@ main.container{ margin-top:0 !important; padding-top:0 !important; }
 @media (max-width:768px){ #mission-sec-1::before{ background-attachment:scroll; } }
 #mission-sec-1 > h2:first-child{ margin-top:0; }
 
-/* Full-bleed faded background behind Section 2 (matches Section 1 pattern) */
+/* Full-bleed faded background behind Section 2 */
 #mission-sec-2{ position:relative; width:100vw; min-height:100svh; min-height:100vh; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); padding:0 !important; isolation:isolate; }
 #mission-sec-2::before{ content:""; position:absolute; inset:0; background:center/cover no-repeat url('assets/images/mission-hero-3.png'); opacity:.28; z-index:-1; background-attachment:fixed; }
 
-/* Full-bleed faded background behind Section 3 (matches Sections 1 & 2) */
+/* Full-bleed faded background behind Section 3 */
 #mission-sec-3{ position:relative; width:100vw; min-height:100svh; min-height:100vh; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); padding:0 !important; isolation:isolate; }
 #mission-sec-3::before{ content:""; position:absolute; inset:0; background:center/cover no-repeat url('assets/images/mission-hero-4.png'); opacity:.28; z-index:-1; background-attachment:fixed; }
 
@@ -287,110 +285,502 @@ main.container{ margin-top:0 !important; padding-top:0 !important; }
   margin: 0;
 }
   
-/* === Surgical overrides per request: headings + bubble colors === */
-/* Make H1 + both H4s the same font and larger */
+/* === Earlier typography & color choices kept === */
 .mission-hero h1, .mission-bubble h4 { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
 .mission-hero h1 { font-size: clamp(2rem, 4.8vw, 3.5rem) !important; line-height: 1.15; }
 .mission-bubble h4 { font-size: clamp(1.25rem, 2.6vw, 1.75rem) !important; line-height: 1.2; letter-spacing: 0.02em; }
 
-/* Make every hero bubble white with black text */
+/* Global white bubble style (kept for lower sections) */
 .mission-bubble { background:#fff !important; color:#000 !important; border-color:#e2e8f0 !important; box-shadow:0 8px 20px rgba(0,0,0,.12) !important; }
 
+/* ========================= */
+/* GLASSMORPHISM — HERO ONLY */
+/* ========================= */
 
-/* === Stronger overrides: heading sizes + bubble colors (hero only) === */
-.page-hero.compact .mission-bubble,
-.mission-hero .mission-bubble{
-  background:#fff !important;
-  color:#000 !important;
-  border-color:#e2e8f0 !important;
+/* Glass headline container */
+.mission-hero .glass-wrap{
+  display:flex; justify-content:center; align-items:center; width:100%;
+  margin: 0 auto;
 }
-
-/* Use the same font for H1 and the two H4s, and make them larger */
-.mission-hero h1,
-.mission-bubble h4{
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+.mission-hero .glass-box{
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 18px;
+  padding: clamp(16px, 3vw, 32px) clamp(20px, 4vw, 48px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+  text-align: center;
+  max-width: min(900px, 92%);
 }
-.mission-hero h1{
-  font-size: clamp(2.4rem, 6vw, 4rem) !important;
-  line-height: 1.1 !important;
+.mission-hero .glass-box h1{ color:#fff !important; margin: 0 0 .5rem; }
+.mission-hero .glass-box + p,
+.mission-hero .glass-box p,
+.mission-hero .hero-content > p{ color:#e6eaf0 !important; }
+
+/* --- FINAL OVERRIDE: make ONLY the hero bubbles frosted glass --- */
+/* Place after all other rules to win specificity + !important battles */
+body.mission header.page-hero.mission-hero .mission-bubbles .mission-bubble{
+  background: rgba(255,255,255,0.10) !important;
+  color:#f7f9fc !important;
+  border: 1px solid rgba(255,255,255,0.35) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,.35) !important;
+} /* <-- closed missing brace so following rules apply */
+
+body.mission header.page-hero.mission-hero .mission-bubbles .mission-bubble h3,
+body.mission header.page-hero.mission-hero .mission-bubbles .mission-bubble h4,
+body.mission header.page-hero.mission-hero .mission-bubbles .mission-bubble p{
+  color:#eef4ff !important;
 }
-.mission-bubble h4{
-  font-size: clamp(1.5rem, 3.2vw, 2rem) !important;
-  line-height: 1.2 !important;
-}
+    /* ... (all your existing CSS unchanged above) ... */
 
-
-/* ===== Desktop banner fixes: colors + uniform typography + bigger headings ===== */
-/* Make ALL mission bubbles white/black on desktop too (hero + anywhere) */
-.mission-bubble{ background:#fff !important; color:#000 !important; border-color:#e2e8f0 !important; }
-
-/* Headings larger than paragraph, same font across banners */
-/* Applies to hero bubbles and section feature cards */
-.page-hero.compact .mission-bubble h3,
-.page-hero.compact .mission-bubble h4,
-.feature-card__title{
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
-  font-size: clamp(1.25rem, 2vw, 1.75rem) !important; /* larger than p */
-  line-height: 1.2 !important;
-  font-weight: 800 !important;
-}
-.page-hero.compact .mission-bubble p,
-.feature-card p{
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
-  font-size: clamp(1rem, 1.2vw, 1.125rem) !important;
-  font-weight: 400 !important;
-}
-
-/* Increase Specialization inline icon size by 50% */
-.mission-bubble--specialization .spec-text p.spec-item .spec-icon{
-  width: clamp(30px, 3.75vw, 48px) !important; /* was 20/2.5vw/32 */
-}
-
-
-/* ===== Desktop-only fixes: enforce white bubbles, uniform typography, bigger headings ===== */
-@media (min-width: 769px){
-  /* Force ALL hero bubbles to white/black on desktop (high specificity) */
-  body.mission .page-hero.compact.mission-hero .mission-bubbles .mission-bubble,
-  body.mission .mission-bubble--left,
-  body.mission .mission-bubble--right,
-  body.mission .mission-bubble--specialization{
-    background:#fff !important;
-    color:#000 !important;
-    border-color:#e2e8f0 !important;
-    box-shadow:0 8px 20px rgba(0,0,0,.12) !important;
+    /* --- FINAL OVERRIDE: make ONLY the hero bubbles frosted glass --- */
+    body.mission header.page-hero.mission-hero .mission-bubbles .mission-bubble{
+      background: rgba(255,255,255,0.10) !important;
+      color:#f7f9fc !important;
+      border: 1px solid rgba(255,255,255,0.35) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      backdrop-filter: blur(10px) !important;
+      box-shadow: 0 16px 40px rgba(0,0,0,.35) !important;
   }
+  /* === HERO GLASS TEXT COLORS (force overwrite) === */
+body.mission header.page-hero.mission-hero .glass-box h1,
+body.mission header.page-hero.mission-hero .mission-bubble h3,
+body.mission header.page-hero.mission-hero .mission-bubble h4 {
+  color: #000 !important; /* black headers */
+}
 
-  /* Headings larger than paragraphs, consistent font across banners */
-  body.mission .mission-hero h1,
-  body.mission .mission-bubble h3,
-  body.mission .mission-bubble h4,
-  body.mission #mission-sec-1 .feature-card__title{
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
-  }
-  body.mission .mission-hero h1{
-    font-size: clamp(2.6rem, 5.2vw, 4.25rem) !important;
-    line-height: 1.1 !important;
-  }
-  body.mission .mission-bubble h3,
-  body.mission .mission-bubble h4,
-  body.mission #mission-sec-1 .feature-card__title{
-    font-size: clamp(1.35rem, 1.8vw, 1.9rem) !important;
-    line-height: 1.2 !important;
-    font-weight: 800 !important;
-  }
-  body.mission .mission-bubble p,
-  body.mission #mission-sec-1 .feature-card p{
-    font-size: clamp(1rem, 1.1vw, 1.125rem) !important;
-    font-weight: 400 !important;
-  }
+body.mission header.page-hero.mission-hero .glass-box p,
+body.mission header.page-hero.mission-hero .mission-bubble p {
+  color: #2f3e46 !important; /* dark slate grey paragraphs */
+}
 
-  /* Specialization icons: +50% size on desktop */
-  body.mission .mission-bubble--specialization .spec-text p.spec-item .spec-icon{
-    width: clamp(30px, 3.75vw, 48px) !important; /* previously 20/2.5vw/32 */
-    height:auto !important;
+    /* === HERO GLASS TEXT COLORS (your request) === */
+    body.mission header.page-hero.mission-hero .glass-box h1,
+    body.mission header.page-hero.mission-hero .mission-bubble h3,
+    body.mission header.page-hero.mission-hero .mission-bubble h4 {
+      color: #000 !important; /* black headers */
+    }
+
+    body.mission header.page-hero.mission-hero .glass-box p,
+    body.mission header.page-hero.mission-hero .mission-bubble p {
+      color: #2f3e46 !important; /* dark slate grey paragraphs */
+    }
+    /* === HERO GLASS TEXT COLORS === */
+body.mission header.page-hero.mission-hero .glass-box h1,
+body.mission header.page-hero.mission-hero .mission-bubble h3,
+body.mission header.page-hero.mission-hero .mission-bubble h4 {
+  color: #000 !important; /* black headers */
+}
+
+body.mission header.page-hero.mission-hero .glass-box p,
+body.mission header.page-hero.mission-hero .mission-bubble p {
+  color: #2f3e46 !important; /* dark slate grey paragraphs */
+}
+
+/* ========== How Our Approach Is Different (scoped) ========== */
+.section-approach .glass-banner {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 24px;
+  padding: clamp(20px, 3.5vw, 40px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  backdrop-filter: blur(14px) saturate(120%);
+  margin: clamp(16px, 3.5vw, 32px) auto 0;
+}
+
+.section-approach .approach-title {
+  margin: 0 0 12px;
+  font-size: clamp(24px, 3.2vw, 36px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.section-approach .approach-lede {
+  margin: 0 0 14px;
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.55;
+  opacity: 0.95;
+}
+
+.section-approach .approach-proof {
+  margin: 0 0 18px;
+  font-size: clamp(16px, 1.35vw, 18px);
+  line-height: 1.55;
+}
+
+.section-approach .approach-close {
+  margin: 14px 0 0;
+  font-size: clamp(16px, 1.3vw, 18px);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.section-approach .approach-pills {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(10px, 1.4vw, 16px);
+  margin: 18px 0 6px;
+}
+
+.section-approach .pill {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 16px;
+  padding: clamp(12px, 1.6vw, 16px);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  backdrop-filter: blur(10px) saturate(120%);
+}
+
+.section-approach .pill-title {
+  display: block;
+  font-weight: 700;
+  font-size: clamp(14px, 1.2vw, 16px);
+  margin-bottom: 4px;
+}
+
+.section-approach .pill-text {
+  display: block;
+  font-size: clamp(13px, 1.05vw, 15px);
+  line-height: 1.45;
+  opacity: 0.95;
+}
+
+@media (max-width: 1024px) {
+  .section-approach .approach-pills {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
+@media (max-width: 640px) {
+  .section-approach .approach-pills {
+    grid-template-columns: 1fr;
+  }
+  .section-approach .glass-banner {
+    border-radius: 18px;
+  }
+}
+  
+/* === FINAL FIX — HERO BUBBLE TEXT COLORS (agreed) === */
+/* Ensure hero bubble headings are black and paragraphs are dark slate grey,
+   overriding previous white text with equal/higher specificity and !important. */
+body.mission header.page-hero.mission-hero .mission-bubbles .mission-bubble h3,
+body.mission header.page-hero.mission-hero .mission-bubbles .mission-bubble h4 {
+  color: #000 !important; /* black headers */
+}
+body.mission header.page-hero.mission-hero .mission-bubbles .mission-bubble p {
+  color: #2f3e46 !important; /* dark slate grey paragraphs */
+}
+
+
+
+/* === SURGICAL LAYOUT: place hero title directly below header and above imagery === */
+.mission-hero .glass-wrap { position: relative; z-index: 2; margin-top: 0; }
+.mission-hero .hero-content { padding-top: calc(var(--header-height, 80px) + clamp(4px, 1.2vw, 18px)) !important; }
+.mission-hero .mission-bubbles { position: relative; z-index: 1; }
+
+/* === SURGICAL FIX: hero H1+p directly under header; ensure header logo visible === */
+/* Reduce the hero section's own top padding so the glass box sits right below the header */
+.mission-hero { padding-top: calc(var(--header-height, 80px) + clamp(6px, 1.6vw, 20px)) !important; }
+/* Keep the title above any imagery */
+.mission-hero .glass-wrap { position: relative; z-index: 2; }
+/* Ensure header always renders on top (logo visible) */
+.site-header { z-index: 3000 !important; }
+
+/* ========================= */
+/* HERO V1 alternating galleries (scoped) */
+/* ========================= */
+.mission-hero .mission-bubbles.hero-rows{ display:grid; grid-template-columns: 1fr; gap: clamp(12px, 2.5vw, 24px); }
+.mission-hero .hero-row{ display:grid; grid-template-columns: minmax(320px,1.2fr) minmax(260px,.8fr); gap: clamp(12px,2vw,20px); align-items: stretch; }
+@media (max-width: 900px){ .mission-hero .hero-row{ grid-template-columns:1fr; } }
+.mission-hero .row-bubble .mission-bubble{ margin:0; height:100%; }
+
+/* Galleries */
+.mission-hero .row-gallery .hero-gallery{ display:grid; gap: clamp(8px,1.4vw,14px); align-content:start; }
+.mission-hero .hero-gallery.gallery-3{ grid-template-columns: repeat(3, 1fr); }
+.mission-hero .hero-gallery.gallery-2{ grid-template-columns: repeat(2, 1fr); }
+.mission-hero .hero-gallery.gallery-4{ grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 900px){
+  .mission-hero .hero-gallery.gallery-3{ grid-template-columns: repeat(3, 1fr); }
+  .mission-hero .hero-gallery.gallery-4{ grid-template-columns: repeat(2, 1fr); }
+}
+.mission-hero .hero-thumb{ display:block; padding:0; border:1px solid rgba(255,255,255,0.35); background: rgba(255,255,255,0.10); border-radius:16px; overflow:hidden; cursor:zoom-in; -webkit-backdrop-filter: blur(8px) saturate(120%); backdrop-filter: blur(8px) saturate(120%); box-shadow:0 12px 30px rgba(0,0,0,.35); transition: transform .2s ease, box-shadow .2s ease; aspect-ratio: 4 / 3; }
+.mission-hero .hero-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.mission-hero .hero-thumb:hover, .mission-hero .hero-thumb:focus-visible{ transform: scale(1.02) translateY(-2px); box-shadow:0 16px 40px rgba(0,0,0,.4); outline:none; }
+
+/* Modal (hero-only) */
+.hero-modal{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; background: rgba(0,0,0,.6); padding:5vh 4vw; z-index:3000; }
+.hero-modal[aria-hidden="false"]{ display:flex; }
+.hero-modal__dialog{ position:relative; margin:0; max-width:min(1200px,96%); }
+.hero-modal__dialog img{ width:100%; height:auto; display:block; border-radius:14px; box-shadow:0 24px 64px rgba(0,0,0,.55); }
+.hero-modal__close{ position:absolute; top:8px; right:8px; width:40px; height:40px; border-radius:999px; border:none; background: rgba(255,255,255,.92); color:#000; font-size:24px; line-height:1; cursor:pointer; }
+@media (prefers-reduced-motion: reduce){ .mission-hero .hero-thumb, .hero-modal__dialog{ transition:none; } }
+/* ========================= */
+/* HERO V1 alternating galleries (scoped) */
+/* ========================= */
+.mission-hero .mission-bubbles.hero-rows{ display:grid; grid-template-columns: 1fr; gap: clamp(12px, 2.5vw, 24px); }
+.mission-hero .hero-row{ display:grid; grid-template-columns: minmax(320px,1.2fr) minmax(260px,.8fr); gap: clamp(12px,2vw,20px); align-items: stretch; }
+@media (max-width: 900px){ .mission-hero .hero-row{ grid-template-columns:1fr; } }
+.mission-hero .row-bubble .mission-bubble{ margin:0; height:100%; }
+
+/* Galleries */
+.mission-hero .row-gallery .hero-gallery{ display:grid; gap: clamp(8px,1.4vw,14px); align-content:start; }
+.mission-hero .hero-gallery.gallery-3{ grid-template-columns: repeat(3, 1fr); }
+.mission-hero .hero-gallery.gallery-2{ grid-template-columns: repeat(2, 1fr); }
+.mission-hero .hero-gallery.gallery-4{ grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 900px){
+  .mission-hero .hero-gallery.gallery-3{ grid-template-columns: repeat(3, 1fr); }
+  .mission-hero .hero-gallery.gallery-4{ grid-template-columns: repeat(2, 1fr); }
+}
+.mission-hero .hero-thumb{
+  display:block; padding:0; border:1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.10); border-radius:16px; overflow:hidden; cursor:zoom-in;
+  -webkit-backdrop-filter: blur(8px) saturate(120%); backdrop-filter: blur(8px) saturate(120%);
+  box-shadow:0 12px 30px rgba(0,0,0,.35); transition: transform .2s ease, box-shadow .2s ease;
+  aspect-ratio: 4 / 3;
+}
+.mission-hero .hero-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.mission-hero .hero-thumb:hover, .mission-hero .hero-thumb:focus-visible{ transform: scale(1.02) translateY(-2px); box-shadow:0 16px 40px rgba(0,0,0,.4); outline:none; }
+
+/* Modal (hero-only) */
+.hero-modal{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; background: rgba(0,0,0,.6); padding:5vh 4vw; z-index:3000; }
+.hero-modal[aria-hidden="false"]{ display:flex; }
+.hero-modal__dialog{ position:relative; margin:0; max-width:min(1200px,96%); }
+.hero-modal__dialog img{ width:100%; height:auto; display:block; border-radius:14px; box-shadow:0 24px 64px rgba(0,0,0,.55); }
+.hero-modal__close{ position:absolute; top:8px; right:8px; width:40px; height:40px; border-radius:999px; border:none; background: rgba(255,255,255,.92); color:#000; font-size:24px; line-height:1; cursor:pointer; }
+
+@media (prefers-reduced-motion: reduce){
+  .mission-hero .hero-thumb, .hero-modal__dialog{ transition:none; }
+}
+
+/* Keep mission statement directly under header & header logo above hero */
+.mission-hero { padding-top: calc(var(--header-height, 80px) + clamp(6px, 1.6vw, 20px)) !important; }
+.mission-hero .glass-wrap { position: relative; z-index: 2; }
+.site-header { z-index: 3000 !important; }
+/* === HERO IMAGE STACK (overlapping, same size, hero-only) === */
+.mission-hero .row-gallery { position: relative; }
+.mission-hero .image-stack{
+  position: relative;
+  height: clamp(300px, 44vw, 560px);
+  isolation: isolate;
+}
+.mission-hero .image-stack .hero-thumb{
+  position: absolute;
+  width: 68%;          /* same size for all */
+  aspect-ratio: 4 / 3; /* consistent shape */
+  /* keep existing .hero-thumb visuals; only add positioning + base transform */
+  transform: translate(var(--tx, 0), var(--ty, 0)) rotate(var(--rot, 0deg));
+  z-index: var(--z, 1);
+}
+.mission-hero .image-stack .hero-thumb:hover,
+.mission-hero .image-stack .hero-thumb:focus-visible{
+  /* preserve base transform while animating */
+  transform: translate(var(--tx, 0), var(--ty, 0)) rotate(var(--rot, 0deg)) scale(1.02) translateY(-2px);
+}
+
+/* Three-card stack layout */
+.mission-hero .image-stack.stack-3 .hero-thumb:nth-child(1){
+  --tx: 0; --ty: 0; --rot: -2deg; --z: 1;
+  left: 6%; top: 0;
+}
+.mission-hero .image-stack.stack-3 .hero-thumb:nth-child(2){
+  --tx: 0; --ty: 0; --rot: 3deg; --z: 2;
+  right: 0; top: 16%;
+}
+.mission-hero .image-stack.stack-3 .hero-thumb:nth-child(3){
+  --tx: 0; --ty: 0; --rot: -1deg; --z: 3;
+  left: 22%; bottom: 0;
+}
+
+/* Two-card stack layout */
+.mission-hero .image-stack.stack-2 .hero-thumb:nth-child(1){
+  --rot: -2deg; --z: 1;
+  left: 8%; top: 6%;
+}
+.mission-hero .image-stack.stack-2 .hero-thumb:nth-child(2){
+  --rot: 2deg; --z: 2;
+  right: 6%; bottom: 6%;
+}
+
+/* Four-card stack layout */
+.mission-hero .image-stack.stack-4 .hero-thumb:nth-child(1){
+  --rot: -2deg; --z: 1;
+  left: 0; top: 0;
+}
+.mission-hero .image-stack.stack-4 .hero-thumb:nth-child(2){
+  --rot: 2deg; --z: 2;
+  right: 0; top: 10%;
+}
+.mission-hero .image-stack.stack-4 .hero-thumb:nth-child(3){
+  --rot: -1deg; --z: 3;
+  left: 14%; bottom: 14%;
+}
+.mission-hero .image-stack.stack-4 .hero-thumb:nth-child(4){
+  --rot: 1.5deg; --z: 4;
+  right: 6%; bottom: 0;
+}
+
+@media (max-width: 900px){
+  .mission-hero .image-stack{ height: clamp(220px, 48vw, 420px); }
+}
+/* Coming Soon — Motion Texture Banner */
+.motion-texture {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(360px, 60vh, 720px);
+  display: grid;
+  place-items: center;
+  overflow: clip;
+  /* Subtle gradient to evoke horizon even if video is dark */
+  background: linear-gradient(180deg, #24262a 0%, #1a1c20 100%);
+  color: #e7e9ec;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+               "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.motion-texture .motion-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(1px) brightness(65%) saturate(95%);
+  transform: scale(1.02); /* avoids hard edges when blurred */
+  z-index: -2;
+}
+
+.motion-texture .motion-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1200px 600px at 50% 30%, rgba(0,0,0,0.35), transparent 70%),
+    linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55));
+  z-index: -1;
+}
+
+.motion-texture .motion-content {
+  text-align: center;
+  padding: clamp(16px, 3vw, 32px);
+  max-width: min(92vw, 880px);
+}
+
+.motion-texture .motion-headline {
+  margin: 0 0 12px 0;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  color: #f3f4f6; /* white-ish */
+  font-size: clamp(32px, 6.2vw, 68px);
+  text-transform: uppercase;
+}
+
+.motion-texture .motion-subtext {
+  margin: 0 auto;
+  line-height: 1.5;
+  font-size: clamp(15px, 1.6vw, 20px);
+  color: #cfd5db; /* slate grey tone */
+  max-width: 50ch;
+}
+
+.motion-texture .motion-cta {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.1);
+  color: #f3f4f6;
+  text-decoration: none;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+  transition: transform 160ms ease, background 160ms ease;
+}
+.motion-texture .motion-cta:hover { transform: translateY(-1px); background: rgba(255,255,255,0.16); }
+.motion-texture .motion-cta:active { transform: translateY(0); }
+
+/* Respect users who prefer reduced motion: pause video and show still image */
+@media (prefers-reduced-motion: reduce) {
+  .motion-texture .motion-bg {
+    animation: none !important;
+  }
+  .motion-texture .motion-bg {
+    display: none; /* rely on gradient background + poster image below */
+  }
+  .motion-texture {
+    background:
+      url("assets/video/coming-soon-poster.jpg") center/cover no-repeat,
+      linear-gradient(180deg, #24262a 0%, #1a1c20 100%);
+  }
+}
+/* Hero: show zoom cursor for all postcard images */
+.mission-hero .hero-thumb,
+.mission-hero img.enlargeable { cursor: zoom-in; }
+/* === HERO — tighten bottom space after <p> inside frosted bubbles === */
+body.mission header.page-hero.mission-hero .mission-bubbles .mission-bubble p{
+  margin-bottom: 0 !important;              /* remove browser default bottom margin */
+}
+
+/* Ensure the bubble itself doesn’t add extra room under the last line */
+body.mission header.page-hero.mission-hero .mission-bubbles .mission-bubble{
+  padding-bottom: clamp(6px, 1vw, 10px) !important;  /* lower only the bottom padding */
+}
+
+/* Specialization list: kill the last item’s trailing margin */
+body.mission header.page-hero.mission-hero .mission-bubble--specialization .spec-text p:last-child{
+  margin-bottom: 0 !important;
+}
+
+/* Safety net: whatever the last child is, don’t add extra margin below it */
+body.mission header.page-hero.mission-hero .mission-bubbles .mission-bubble > :last-child{
+  margin-bottom: 0 !important;
+}
+/* HERO-ONLY: bubble typography scale */
+body.mission header.page-hero.mission-hero .mission-bubbles .mission-bubble h3{
+  font-size: clamp(3rem, 2vw, 3rem) !important; /* adjust */
+  line-height: 1.2;
+}
+
+body.mission header.page-hero.mission-hero .mission-bubbles .mission-bubble h4{
+  font-size: clamp(2.3rem, 2.2vw, 1.4rem) !important;  /* adjust */
+  line-height: 1.2;
+}
+
+/* Paragraphs inside hero bubbles */
+body.mission header.page-hero.mission-hero .mission-bubbles .mission-bubble p{
+  font-size: clamp(1.6rem, 1.2vw, 1.06rem);  /* adjust */
+  line-height: 1.5;
+/* HERO ONLY — Specialization icon size override */
+body.mission header.page-hero.mission-hero
+  .mission-bubble--specialization .spec-text p.spec-item .spec-icon{
+  width: clamp(28px, 3vw, 40px) !important;  /* adjust to taste */
+  height: auto !important;
+}
+/* === Spacing tweak for mission scroll sections === */
+:root {
+  /* Tweak these three values to taste */
+  --sec2-pad-top: clamp(2rem, 6vw, 6rem);
+  --sec3-pad-top: clamp(2rem, 6vw, 6rem);
+  --last-img-top: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+/* Primary target: sections with IDs (most builds use #mission-sec-2 / -3) */
+#mission-sec-2 { padding-top: var(--sec2-pad-top) !important; }
+#mission-sec-3 { padding-top: var(--sec3-pad-top) !important; }
+
+/* Fallback target: if sections are classed as .scroll-section (no IDs) */
+section.scroll-section:nth-of-type(2),
+.scroll-section:nth-of-type(2) { padding-top: var(--sec2-pad-top) !important; }
+
+section.scroll-section:nth-of-type(3),
+.scroll-section:nth-of-type(3) { padding-top: var(--sec3-pad-top) !important; }
+
+/* Extra space above the LAST scroll section's final image */
+.scroll-section:last-of-type img:last-of-type,
+[id^="mission-sec-"]:last-of-type img:last-of-type {
+  margin-top: var(--last-img-top) !important;
+}
 </style>
 </head>
 <body class="mission">
@@ -422,34 +812,110 @@ main.container{ margin-top:0 !important; padding-top:0 !important; }
   <div class="backdrop" data-close-panel hidden></div>
 
   <main id="main" class="container section center prose">
-  <header class="page-hero compact mission-hero" style="--mission-hero-bg:url('assets/images/mission-hero.png');">
+
+<!-- HERO (V1 with alternating galleries) -->
+<header class="page-hero compact mission-hero" style="--mission-hero-bg:url('assets/images/mission-hero.png');">
   <div class="mission-bg" aria-hidden="true"></div>
+
   <div class="hero-content">
-      <h1>Our Mission</h1>
-    <p>"We empower helicopter operators by eliminating maintenance constraints and leveraging technology to provide dependable solutions that maximize operational freedom"</p>
-  <div class="mission-bubbles">
-  <div class="mission-bubble mission-bubble--left" role="note">
-    <h3 class="mission-bubble__title">About us</h3>
-    <p>We are a full service AMO that plugs directly into your operation. Our team manages every aspect of helicopter maintenance and business development, including; AOG support, field and heavy maintenance, maintenance planning and forecasting, parts ordering, pilot training, TC compliance, administrative burdens and fleet expansion support. Quality is our core principle and we uphold your brand down to every detail.</p>
-  </div>
-  <div class="mission-bubble mission-bubble--right" role="note">
-    <h4>The People Behind Our Mission</h4>
-    <p>Capital Aerospace was founded to create a healthy, people first focused work environment in aviation. We believe our culture drives success, and we safeguard that ethos with great care</p>
-  </div>
-  <div class="mission-bubble mission-bubble--specialization" role="note">
-  <div class="spec-text">
-    <h4>SPECIALIZATION</h4>
-    <p class="spec-item"><img class="spec-icon" src="assets/icons/bell.png" alt="Bell"> <span>• BELL 407</span></p>
-    <p class="spec-item"><img class="spec-icon" src="assets/icons/bell.png" alt="Bell"> <span>• BELL 206 SERIES</span></p>
-    <p class="spec-item"><img class="spec-icon" src="assets/icons/rolls.png" alt="Rolls-Royce"> <span>• ROLLS ROYCE SERIES 2 & 4</span></p>
-    <p class="spec-item"><img class="spec-icon" src="assets/icons/airbus.png" alt="Airbus"> <span>• AIRBUS AS350 SERIES</span></p>
-    <p class="spec-item"><img class="spec-icon" src="assets/icons/honeywell.png" alt="Honeywell LTS-101"> <span>• LTS-101 SERIES</span></p>
-    <p class="spec-item"><img class="spec-icon" src="assets/icons/safran.png" alt="Safran Arriel 2"> <span>• SAFRAN ARRIEL 2</span></p>
-  </div>
+    <!-- Mission statement pinned at top -->
+    <div class="glass-wrap">
+      <div class="glass-box">
+        <h1>Our Mission</h1>
+        <p>"We empower helicopter operators by eliminating maintenance constraints and leveraging technology to provide dependable solutions that maximize operational freedom"</p>
+      </div>
+    </div>
+
+    <!-- Alternating layout rows; bubble designs & fonts untouched -->
+    <div class="mission-bubbles hero-rows">
+      <!-- Row 1: About us (left) + 3 interactive images (right) -->
+      <section class="hero-row row-1">
+        <div class="row-bubble">
+          <div class="mission-bubble mission-bubble--left" role="note">
+            <h3 class="mission-bubble__title">About us</h3>
+            <p>We are a full service AMO that plugs directly into your operation. Our team manages every aspect of helicopter maintenance and business development, including; AOG support, field and heavy maintenance, maintenance planning and forecasting, parts ordering, pilot training, TC compliance, administrative burdens and fleet expansion support. Quality is our core principle and we uphold your brand down to every detail.</p>
+          </div>
+        </div>
+        <div class="row-gallery" aria-label="About us gallery">
+          <div class="image-stack stack-3">
+  <button type="button" class="hero-thumb" data-full="assets/images/mission-hero.png" aria-label="Open image: Hangar operations">
+    <img src="assets/images/mission-hero.png" alt="Hangar operations">
+  </button>
+  <button type="button" class="hero-thumb" data-full="assets/images/mission-hero-2.png" aria-label="Open image: Field maintenance">
+    <img src="assets/images/mission-hero-2.png" alt="Field maintenance">
+  </button>
+  <button type="button" class="hero-thumb" data-full="assets/images/mission-hero-4.png" aria-label="Open image: Aircraft readiness">
+    <img src="assets/images/mission-hero-4.png" alt="Aircraft readiness">
+  </button>
 </div>
+        </div>
+      </section>
+
+      <!-- Row 2: 2 interactive images (left) + People bubble (right) -->
+      <section class="hero-row row-2">
+        <div class="row-gallery" aria-label="Team gallery">
+          <div class="image-stack stack-2">
+  <button type="button" class="hero-thumb" data-full="assets/images/mission-hero-2.png" aria-label="Open image: Team at work">
+    <img src="assets/images/mission-hero-2.png" alt="Team at work">
+  </button>
+  <button type="button" class="hero-thumb" data-full="assets/images/mission-hero-3.png" aria-label="Open image: On-site support">
+    <img src="assets/images/mission-hero-3.png" alt="On-site support">
+  </button>
 </div>
+        </div>
+        <div class="row-bubble">
+          <div class="mission-bubble mission-bubble--right" role="note">
+            <h4>The People Behind Our Mission</h4>
+            <p>Capital Aerospace was founded to create a healthy, people first focused work environment in aviation. We believe our culture drives success, and we safeguard that ethos with great care</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Row 3: Specialization bubble (left) + 4 interactive images (right) -->
+      <section class="hero-row row-3">
+        <div class="row-bubble">
+          <div class="mission-bubble mission-bubble--specialization" role="note">
+            <div class="spec-text">
+              <h4>SPECIALIZATION</h4>
+              <p class="spec-item"><img class="spec-icon" src="assets/icons/bell.png" alt="Bell"> <span>• BELL 407</span></p>
+              <p class="spec-item"><img class="spec-icon" src="assets/icons/bell.png" alt="Bell"> <span>• BELL 206 SERIES</span></p>
+              <p class="spec-item"><img class="spec-icon" src="assets/icons/rolls.png" alt="Rolls-Royce"> <span>• ROLLS ROYCE SERIES 2 & 4</span></p>
+              <p class="spec-item"><img class="spec-icon" src="assets/icons/airbus.png" alt="Airbus"> <span>• AIRBUS AS350 SERIES</span></p>
+              <p class="spec-item"><img class="spec-icon" src="assets/icons/honeywell.png" alt="Honeywell LTS-101"> <span>• LTS-101 SERIES</span></p>
+              <p class="spec-item"><img class="spec-icon" src="assets/icons/safran.png" alt="Safran Arriel 2"> <span>• SAFRAN ARRIEL 2</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="row-gallery" aria-label="Specialization gallery">
+          <div class="image-stack stack-4">
+  <button type="button" class="hero-thumb" data-full="assets/images/mission-hero.png" aria-label="Open image: Bell 407 in field">
+    <img src="assets/images/mission-hero.png" alt="Bell 407 in field">
+  </button>
+  <button type="button" class="hero-thumb" data-full="assets/images/mission-hero-2.png" aria-label="Open image: Maintenance planning">
+    <img src="assets/images/mission-hero-2.png" alt="Maintenance planning">
+  </button>
+  <button type="button" class="hero-thumb" data-full="assets/images/mission-hero-3.png" aria-label="Open image: Engine service">
+    <img src="assets/images/mission-hero-3.png" alt="Engine service">
+  </button>
+  <button type="button" class="hero-thumb" data-full="assets/images/mission-hero-4.png" aria-label="Open image: Pre-flight checks">
+    <img src="assets/images/mission-hero-4.png" alt="Pre-flight checks">
+  </button>
 </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Modal for image previews (hero-only) -->
+  <div class="hero-modal" id="heroModal" aria-hidden="true">
+    <figure class="hero-modal__dialog" role="dialog" aria-modal="true" aria-label="Image preview">
+      <img id="heroModalImg" alt="">
+      <figcaption id="heroModalCap" class="sr-only"></figcaption>
+      <button id="heroModalClose" class="hero-modal__close" aria-label="Close preview">×</button>
+    </figure>
+  </div>
 </header>
+<!-- /HERO -->
 
   <section id="mission-sec-1" class="section scroll-section">
     <h2>WHAT WE TAKE CARE OF</h2>
@@ -536,15 +1002,126 @@ main.container{ margin-top:0 !important; padding-top:0 !important; }
         </div>
       </article>
     </div>
-  </section><section id="mission-sec-2" class="section scroll-section">
-    <h2>HOW OUR APPROACH IS DIFFERENT</h2>
-    <p>*****UNDER CONSTRUCTION*****WEBSITE WORK IN PROGRESS</p>
   </section>
 
-  <section id="mission-sec-3" class="section scroll-section">
-    <h2>PRICING</h2>
-    <p>*****UNDER CONSTRUCTION*****WEBSITE WORK IN PROGRESS</p>
+  <!-- SURGICAL INSERT: HOW OUR APPROACH IS DIFFERENT with frosted glass banner -->
+  <section id="mission-sec-2" class="section scroll-section section-approach">
+    <h2>HOW OUR APPROACH IS DIFFERENT</h2>
+    <div class="container">
+      <div class="glass-banner" role="region" aria-labelledby="approach-title">
+        <h3 id="approach-title" class="approach-title">
+          Finally, a Maintenance Partner Built for Utility Operators
+        </h3>
+
+        <p class="approach-lede">
+          Most maintenance facilities are designed for themselves. We’re designed for you! Capital Aerospace is a full-service AMO, purpose-built for light and intermediate utility helicopter operators. Every process, every touchpoint, every decision is shaped around your operations. We take care of our end so you can focus on yours.
+        </p>
+
+        <p class="approach-proof">
+                    This approach delivers results. We integrated and partnered with Capital Helicopters where we started with <strong>5</strong> aircraft and have grown to <strong>11</strong> in just three years. During this time, we facilitated the build of three new facilities and proving that growth and culture can scale together.
+
+        </p>
+
+        <div class="approach-pills" aria-label="What makes us different">
+          <div class="pill">
+            <span class="pill-title">Radical Transparency</span>
+            <span class="pill-text"> Moral integrity. clear cost structure, clear communication.</span>
+          </div>
+          <div class="pill">
+            <span class="pill-title">Culture as Currency</span>
+            <span class="pill-text">Pride, accountability, and shared success.</span>
+          </div>
+          <div class="pill">
+            <span class="pill-title">Logistics Mastery</span>
+            <span class="pill-text">Planning that minimizes downtime, maximizes flight hours
+.</span>
+          </div>
+          <div class="pill">
+            <span class="pill-title">Relentless Quality</span>
+            <span class="pill-text">Work that stands up to the toughest scrutiny
+.</span>
+          </div>
+        </div>
+
+        <p class="approach-close">
+          For operators who’ve been searching for a partner who understands their challenges and will optimize their success
+.
+        </p>
+      </div>
+    </div>
+    <!-- Coming Soon — Motion Texture Banner -->
+<section class="coming-soon motion-texture" aria-label="Coming soon announcement">
+  <!-- Background video (muted, inline, subtle) -->
+  <video class="motion-bg" autoplay muted loop playsinline preload="none"
+         poster="assets/video/coming-soon-poster.jpg">
+    <!-- Provide both formats for compatibility -->
+    <source src="assets/video/coming-soon.webm" type="video/webm" />
+    <source src="assets/video/coming-soon.mp4" type="video/mp4" />
+    <!-- If neither plays, the poster image will show -->
+  </video>
+
+  <!-- Dark overlay to keep text legible on any footage -->
+  <div class="motion-overlay" aria-hidden="true"></div>
+
+  <!-- Content -->
+  <div class="motion-content">
+    <h2 class="motion-headline">GROWTH IS IN MOTION</h2>
+    <p class="motion-subtext">
+      We’re expanding to bring more capability, more coverage, and more support.
+    </p>
+    <ul class="motion-bullets">
+  <li>Honeywell LTS-101 series 1800 Hour Inspection</li>
+  <li>Airbus AS350 12 Year Inspection Completion; Including Full Airframe Painting Facility</li>
+  <li>Custom Built For Helicopter Operators Digital Logbook Service</li>
+  <li>Custom Built Company Specific Software Applications</li>
+</ul>
+
+    <!-- Optional CTA (uncomment if you want it) -->
+    <!-- <a class="motion-cta" href="/contact.html">Stay Connected</a> -->
+  </div>
+</section>
   </section>
+  <!-- /SURGICAL INSERT -->
+
+  <section id="mission-sec-3" class="section scroll-section">
+    <!-- SURGICAL INSERT: PRICING with frosted glass banner -->
+  <section id="mission-sec-2" class="section scroll-section section-approach">
+    <h2>PRICING</h2>
+    <div class="container">
+      <div class="glass-banner" role="region" aria-labelledby="pricing-title">
+        <h3 id="pricing-title" class="pricing-title">
+          Clear, predictable pricing. Know your exact maintenance cost per helicopter, with no hidden rates or hourly surprises.
+        </h3>
+
+        <p class="approach-lede">
+          Our unique approach gives you the ability to accurately budget your full base cost per aircraft, ensuring dependable margins. During our initial meetings and discovery process, we define exactly what your operation requires. From there, we build a fixed annual per-helicopter rate for the fiscal year, invoiced monthly. This is a simple, transparent way to manage aircraft maintenance.  
+        </p>
+
+        <p class="approach-proof">
+                    Our focus is simple: maintain your helicopters to the highest standard, with no hourly tracking or hidden markups.
+
+        </p>
+
+        <div class="approach-pills" aria-label="What makes us different">
+          <div class="pill">
+            <span class="pill-title">Bulk pricing</span>
+            <span class="pill-text"> By leveraging our buying power, we pass the best possible savings directly to you.</span>
+          </div>
+          <div class="pill">
+            <span class="pill-title">No markups.Period.</span>
+            <span class="pill-text">We build in our margin openly and fairly, not through markups or hidden fees.</span>
+          </div>
+          <div class="pill">
+            <span class="pill-title">Predictable cost</span>
+            <span class="pill-text">Based on your needs we set a price, thats it.</span>
+          </div>
+          <div class="pill">
+            <span class="pill-title">Alternative Solutions</span>
+            <span class="pill-text">Extra value solutions can be added anytime; simple, transparent, on your terms.</span>
+          </div>
+        </p>
+      </div>
+    </div>
 </main>
   
   <footer class="site-footer">
@@ -575,6 +1152,83 @@ main.container{ margin-top:0 !important; padding-top:0 !important; }
     </div>
   </footer>
   <script src="assets/js/script.js" defer></script>
+  <script>
+  // HERO — Universal zoom for all postcard images in the hero
+  (function () {
+    const hero = document.querySelector('.mission-hero');
+    if (!hero || hero.dataset.zoomInit === '1') return;
+    hero.dataset.zoomInit = '1';
+
+    // Modal elements (already in your hero header)
+    const modal   = document.getElementById('heroModal');
+    const imgEl   = document.getElementById('heroModalImg');
+    const capEl   = document.getElementById('heroModalCap');
+    const closeEl = document.getElementById('heroModalClose');
+    if (!modal || !imgEl || !closeEl) return;
+
+    function openModal(src, alt) {
+      if (!src) return;
+      imgEl.src = src;
+      imgEl.alt = alt || '';
+      if (capEl) capEl.textContent = alt || '';
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      try { closeEl.focus({ preventScroll: true }); } catch (e) {}
+    }
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      imgEl.src = '';
+      imgEl.alt = '';
+      if (capEl) capEl.textContent = '';
+    }
+
+    // Delegate clicks from the hero container
+    function getTargetInfo(target) {
+      // Click on a button.hero-thumb or its children
+      const thumbBtn = target.closest('.hero-thumb');
+      if (thumbBtn) {
+        const img = thumbBtn.querySelector('img');
+        const src = thumbBtn.getAttribute('data-full') || (img ? img.src : '');
+        const alt = img ? img.alt : '';
+        return { src, alt };
+      }
+      // Click directly on an image you opt-in as enlargeable
+      const imgEl = target.closest('img.enlargeable');
+      if (imgEl) {
+        const src = imgEl.getAttribute('data-full') || imgEl.src;
+        const alt = imgEl.alt || '';
+        return { src, alt };
+      }
+      return null;
+    }
+
+    hero.addEventListener('click', (e) => {
+      const info = getTargetInfo(e.target);
+      if (info) {
+        e.preventDefault();
+        openModal(info.src, info.alt);
+      }
+    });
+
+    // Keyboard support for Enter/Space on .hero-thumb
+    hero.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const info = getTargetInfo(e.target);
+      if (info) {
+        e.preventDefault();
+        openModal(info.src, info.alt);
+      }
+    });
+
+    // Close interactions
+    closeEl.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => {
+      if (modal.getAttribute('aria-hidden') === 'false' && e.key === 'Escape') closeModal();
+    });
+  })();
+  
+</script>
 </body>
 </html>
-
