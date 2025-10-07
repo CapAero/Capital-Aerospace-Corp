@@ -191,7 +191,7 @@
                     class="styled-font mb-2"
                     style="font-size: 1rem; font-weight: 700"
                   >
-                    Bulk pricing
+                    Bulk Pricing
                   </p>
                   By leveraging our buying power, we pass the best possible savings directly to you.
                 </v-card-text>
@@ -211,7 +211,7 @@
                     class="styled-font mb-2"
                     style="font-size: 1rem; font-weight: 700"
                   >
-                    No markups. Period.
+                    No Markups - Period.
                   </p>
                   We build in our margin openly and fairly, not through markups or hidden fees.
                 </v-card-text>
@@ -231,7 +231,7 @@
                     class="styled-font mb-2"
                     style="font-size: 1rem; font-weight: 700"
                   >
-                    Predictable cost
+                    Predictable Cost
                   </p>
                   Based on your needs we set a price, thats it.
                 </v-card-text>
