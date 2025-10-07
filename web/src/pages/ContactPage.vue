@@ -42,25 +42,8 @@
 
               <v-form
                 v-model="valid"
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
                 @submit.prevent="handleSubmit"
               >
-                <input
-                  type="hidden"
-                  name="form-name"
-                  value="contact"
-                />
-
-                <!-- Honeypot to reduce spam -->
-                <div
-                  hidden
-                  aria-hidden="true"
-                >
-                  <label>Don't fill this out: <input name="bot-field" /></label>
-                </div>
                 <v-text-field
                   v-model="formData.name"
                   :rules="[(v) => !!v || 'Name is required']"
@@ -190,7 +173,7 @@ const file = ref(null)
 
 const handleSubmit = async () => {
   const data = new FormData()
-  data.append("form-name", "resume")
+  data.append("form-name", "contact")
   data.append("name", formData.value.name)
   data.append("email", formData.value.email)
   data.append("message", formData.value.message)
