@@ -1,0 +1,45 @@
+{
+  "name": "cap-aero-maint-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "lint": "eslint . --ext .js,.ts,.vue --ignore-path ../.gitignore",
+    "check-types": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "@tabler/icons-vue": "^3.34.1",
+    "axios": "^1.6.8",
+    "lodash": "^4.17.21",
+    "qs": "^6.11.2",
+    "validator": "^13.12.0",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0",
+    "vue-scrollto": "^2.20.0",
+    "vuetify": "^3.7.6"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.0",
+    "@types/qs": "^6.9.14",
+    "@types/validator": "^13.12.2",
+    "@typescript-eslint/eslint-plugin": "^8.40.0",
+    "@typescript-eslint/parser": "^8.40.0",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-vue": "^9.25.0",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.2.5",
+    "sass": "^1.72.0",
+    "typescript": "^5.4.5",
+    "vite": "^7.1.3",
+    "vite-plugin-vuetify": "^2.0.4",
+    "vue-tsc": "^3.0.6"
+  }
+}

@@ -1,0 +1,8 @@
+// src/scss/variables.scss
+$body-font-family: 'Poppins', sans-serif;
+$heading-font-family: 'Poppins', sans-serif; /* Or a different font for headings */
+
+// Optional: Adjust root font size if needed
+$font-size-root: 16px;
+
+@import 'vuetify/lib/styles/main.sass';
