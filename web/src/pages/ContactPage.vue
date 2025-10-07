@@ -172,9 +172,9 @@ window.addEventListener("resize", updateContentHeight)
 const valid = ref(false)
 const snackbar = ref(false)
 const formData = ref({
-  name: " ",
-  email: " ",
-  message: " ",
+  name: "",
+  email: "",
+  message: "",
 })
 
 const handleSubmit = async () => {
@@ -193,7 +193,7 @@ const handleSubmit = async () => {
     })
     if (response.ok) {
       console.log("Contact submitted")
-      formData.value = { name: "", email: "", message: "" }
+      formData.value = { name: " ", email: " ", message: " " }
     }
   } catch (error) {
     console.error("Submission failed:", error)

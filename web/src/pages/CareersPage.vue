@@ -144,15 +144,15 @@ onMounted(() => {
 window.addEventListener("resize", updateContentHeight)
 
 const formData = ref({
-  name: " ",
-  email: " ",
-  message: " ",
+  name: "",
+  email: "",
+  message: "",
 })
 const file = ref(null)
 
 const handleSubmit = async () => {
   const data = new FormData()
-  data.append("form-name", "careers")
+  data.append("form-name", "apply")
   data.append("name", formData.value.name)
   data.append("email", formData.value.email)
   data.append("message", formData.value.message)
@@ -168,7 +168,7 @@ const handleSubmit = async () => {
     })
     if (response.ok) {
       console.log("Resume submitted")
-      formData.value = { name: "", email: "", message: "" }
+      formData.value = { name: " ", email: " ", message: " " }
       file.value = null
     }
   } catch (error) {
