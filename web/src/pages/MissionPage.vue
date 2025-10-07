@@ -4,7 +4,7 @@
     :style="{ height: section1Height }"
   >
     <v-img
-      :src="hero2Image"
+      :src="hero1Image"
       class="fill-height"
       cover
       style="opacity: 0.3"
@@ -182,7 +182,7 @@
     :style="{ height: section3Height }"
   >
     <v-img
-      :src="hero2Image"
+      :src="hero3Image"
       class="fill-height"
       cover
       style="opacity: 0.3; min-height: 100vh"
@@ -329,7 +329,7 @@
     :style="{ height: section4Height }"
   >
     <v-img
-      :src="hero2Image"
+      :src="hero4Image"
       class="fill-height"
       cover
       style="opacity: 0.3; min-height: 100vh"
@@ -527,7 +527,10 @@
 </template>
 
 <script setup lang="ts">
-import hero2Image from "@/assets/images/hero-05.jpg"
+import hero1Image from "/images/mission-1.jpg"
+import hero2Image from "/images/mission-2.jpg"
+import hero3Image from "/images/mission-3.jpg"
+import hero4Image from "/images/mission-4.jpg"
 import OfferingItem from "@/components/mission/OfferingItem.vue"
 import { onMounted, ref } from "vue"
 

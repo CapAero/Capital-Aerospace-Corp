@@ -4,7 +4,7 @@
     :style="{ height: section1Height }"
   >
     <v-img
-      :src="hero2Image"
+      :src="hero1Image"
       class="fill-height"
       cover
       style="opacity: 0.3"
@@ -274,7 +274,8 @@
 </template>
 
 <script setup lang="ts">
-import hero2Image from "/images/pricing-1.jpg"
+import hero1Image from "/images/pricing-1.jpg"
+import hero2Image from "/images/pricing-2.jpg"
 import { onMounted, ref } from "vue"
 
 import { useDisplay } from "vuetify/lib/composables/display"
