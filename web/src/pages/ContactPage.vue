@@ -184,7 +184,6 @@ const handleSubmit = async () => {
   try {
     const response = await fetch("/", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: data,
     })
     if (response.ok) {
