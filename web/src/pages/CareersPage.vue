@@ -88,6 +88,7 @@
                 ></v-textarea>
 
                 <v-file-input
+                  v-model="file"
                   label="Attach your resume"
                   name="resume"
                   class="mb-4"
@@ -148,7 +149,7 @@ const formData = ref({
   email: "",
   message: "",
 })
-const file = ref(null)
+const file = ref<File | null>(null)
 
 const handleSubmit = async () => {
   const data = new FormData()
