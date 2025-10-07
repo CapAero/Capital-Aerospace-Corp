@@ -164,7 +164,6 @@ const handleSubmit = async () => {
     const response = await fetch("/", {
       method: "POST",
       body: data,
-      headers: { "Content-Type": "multipart/form-data" },
     })
     if (response.ok) {
       console.log("Resume submitted")
