@@ -27,7 +27,7 @@
         <StaffCard
           title="Kevin Beamish"
           subtitle="President/PRM"
-          icon="/images/staff/KevinBeamish.png"
+          icon="/images/staff/KevinBeamish.jpg"
         >
           Kevin has over 25 years of experience in the aviation industry, including 15 years in
           management roles. He has held positions such as Director of Maintenance and Director of
@@ -41,7 +41,7 @@
         <StaffCard
           title="Trevor Strockinski"
           subtitle="Team Lead & AME"
-          icon="/images/staff/stock.png"
+          icon="/images/staff/Trevor.jpg"
         >
           Our Maintenance Planning and Logistics services ensure precise coordination between the
           maintenance and operations departments. Your operation will have a dedicated Capital
@@ -53,7 +53,7 @@
         <StaffCard
           title="Kyle Landry"
           subtitle="Technology and Innovation Lead & AME"
-          icon="/images/staff/stock.png"
+          icon="/images/staff/KyleLandry.jpg"
         >
           Our Inventory Control program provides accurate tracking and management of your aircraft
           parts, following the same proven model used by established in-house AMOs. We will maintain
@@ -65,7 +65,7 @@
         <StaffCard
           title="Jay Chow"
           subtitle="Technical Records and Stores Manager"
-          icon="/images/staff/stock.png"
+          icon="/images/staff/JayChow.jpg"
         >
           Our Operations Staff Training program provides structured annual and progressive training
           to strengthen coordination between operations and maintenance departments. Each program is
@@ -90,7 +90,7 @@
         <StaffCard
           title="Owen Davis"
           subtitle="AME"
-          icon="/images/staff/stock.png"
+          icon="/images/staff/OwenDavis.jpg"
         >
           This service provides the option of building or replacing the Documents Incorporated for
           Reference manual to ensure it aligns with current regulatory and operational requirements.
@@ -114,7 +114,7 @@
         <StaffCard
           title="Jesse Kirby"
           subtitle="Apprentice & Turbine Specialist"
-          icon="/images/staff/stock.png"
+          icon="/images/staff/JesseKirby.jpg"
         >
           We work directly with your management staff to determine the most suitable aircraft for
           both current operations and future fleet growth. By analyzing the maintenance constraints
@@ -126,7 +126,7 @@
         <StaffCard
           title="Ryan Purcell"
           subtitle="Apprentice"
-          icon="/images/staff/stock.png"
+          icon="/images/staff/RyanPurcell.jpg"
         >
           Our Health and Safety Program is designed to integrate seamlessly with your operation,
           ensuring full compliance with regulatory requirements while fostering a proactive safety
@@ -136,7 +136,7 @@
         <StaffCard
           title="Andrew Sinding"
           subtitle="Apprentice"
-          icon="/images/staff/stock.png"
+          icon="/images/staff/AndrewSinding.jpg"
         >
           Our Health and Safety Program is designed to integrate seamlessly with your operation,
           ensuring full compliance with regulatory requirements while fostering a proactive safety

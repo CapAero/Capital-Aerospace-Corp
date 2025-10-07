@@ -274,7 +274,7 @@
 </template>
 
 <script setup lang="ts">
-import hero2Image from "@/assets/images/hero-05.jpg"
+import hero2Image from "/images/pricing-1.jpg"
 import { onMounted, ref } from "vue"
 
 import { useDisplay } from "vuetify/lib/composables/display"

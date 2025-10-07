@@ -158,7 +158,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue"
 
-import hero2Image from "@/assets/images/hero-05.jpg"
+import hero2Image from "/images/contact-bg.jpg"
 
 const section1Height = ref("100vh")
 
