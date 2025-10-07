@@ -1,0 +1,233 @@
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+span,
+p {
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-root {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  font-size: 2rem;
+  color: white;
+}
+
+.header-test {
+  flex-shrink: 0;
+  height: 190px !important; /* Example fixed height */
+  display: flex;
+}
+
+.content {
+  flex: 1; /* Shorthand for flex-grow: 1; flex-shrink: 1; flex-basis: 0%; */
+  z-index: 2;
+}
+
+.footer {
+  flex-shrink: 0; /* Prevents footer from shrinking */
+  background-color: #152332 !important;
+  color: white !important;
+  height: auto !important;
+  z-index: 2;
+}
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover,
+a:focus {
+  color: gold;
+}
+
+.hero-heading {
+  color: white;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.hero-body {
+  color: white;
+  font-size: 19px;
+  line-height: 32px;
+}
+
+h1 {
+  font-size: 44px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+hr {
+  border-color: #999;
+}
+
+.headline {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.page-header {
+  color: white;
+  text-align: center;
+  margin: 50px 0 80px;
+}
+
+button.hero-thumb {
+  border-radius: 16px;
+  border: 1px #999 solid;
+  overflow: hidden;
+  height: 225px;
+  width: 292px;
+  position: absolute;
+}
+
+button.hero-thumb.about-1 {
+  top: 10px;
+  left: 15px;
+  transform: rotate(-2deg);
+  background: url("/images/mission/about-1.jpg") no-repeat center;
+  background-size: cover;
+}
+button.hero-thumb.about-2 {
+  top: 80px;
+  left: calc(100% - 320px);
+  transform: rotate(3deg);
+  background: url("/images/mission/about-2.jpg") no-repeat center;
+  background-size: cover;
+}
+button.hero-thumb.about-3 {
+  top: 250px;
+  left: 60px;
+  transform: rotate(5deg);
+  background: url("/images/mission/about-3.jpg") no-repeat center;
+  background-size: cover;
+}
+
+button.hero-thumb.people-1 {
+  top: 10px;
+  left: calc(100% - 320px);
+  transform: rotate(-3deg);
+  background: url("/images/mission/people-1.jpg") no-repeat center;
+  background-size: cover;
+}
+button.hero-thumb.people-2 {
+  top: 150px;
+  left: 30px;
+  transform: rotate(5deg);
+  background: url("/images/mission/people-2.jpg") no-repeat center;
+  background-size: cover;
+}
+
+button.hero-thumb.specialization-1 {
+  top: 10px;
+  left: calc(10px);
+  transform: rotate(-3deg);
+  background: url("/images/mission/specialization-1.jpg") no-repeat center;
+  background-size: cover;
+}
+button.hero-thumb.specialization-2 {
+  top: 60px;
+  left: calc(100% - 300px);
+  transform: rotate(6deg);
+  background: url("/images/mission/specialization-2.jpg") no-repeat center;
+  background-size: cover;
+}
+button.hero-thumb.specialization-3 {
+  top: 230px;
+  left: calc(15%);
+  transform: rotate(2deg);
+  background: url("/images/mission/specialization-3.jpg") no-repeat center;
+  background-size: cover;
+}
+button.hero-thumb.specialization-4 {
+  top: 250px;
+  left: calc(100% - 300px);
+  transform: rotate(-5deg);
+  background: url("/images/mission/specialization-4.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.active a,
+a.active {
+  color: gold;
+}
+
+.border-card {
+  border: 1px solid #96a0ab !important;
+}
+
+.styled-font {
+  font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+li:last-child {
+  margin-bottom: 0;
+}
+
+.section {
+  min-height: 100vh; /* Full viewport height */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start; /* Snap to top of section */
+  box-sizing: border-box;
+  position: relative;
+}
+
+.fullpage {
+  background-color: #000;
+  /* margin-top: -90px; */ /* Adjust based on your header height */
+  height: 100vh; /* Full viewport height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  scroll-snap-type: y mandatory; /* Force snapping */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+}
+/* Override Vuetify defaults */
+.v-main {
+  padding: 0 !important; /* Remove Vuetify padding */
+  height: 100vh; /* Ensure v-main is full height */
+}
+
+.v-application__wrap {
+  min-height: 100vh !important; /* Override v-app wrap */
+}
