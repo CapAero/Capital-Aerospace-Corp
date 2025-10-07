@@ -78,6 +78,13 @@
                 >
                   Send
                 </v-btn>
+                <v-snackbar
+                  v-model="snackbar"
+                  location="top center"
+                  timeout="3000"
+                  color="success"
+                  text="Thank you! We will be in touch soon."
+                />
               </v-form>
             </v-card-text>
           </v-card>
@@ -169,7 +176,6 @@ const formData = ref({
   email: "",
   message: "",
 })
-const file = ref(null)
 
 const handleSubmit = async () => {
   const data = new FormData()
@@ -177,7 +183,6 @@ const handleSubmit = async () => {
   data.append("name", formData.value.name)
   data.append("email", formData.value.email)
   data.append("message", formData.value.message)
-  if (file.value) data.append("resume", file.value)
 
   snackbar.value = true
 
@@ -187,9 +192,8 @@ const handleSubmit = async () => {
       body: data,
     })
     if (response.ok) {
-      console.log("Resume submitted")
+      console.log("Contact submitted")
       formData.value = { name: "", email: "", message: "" }
-      file.value = null
     }
   } catch (error) {
     console.error("Submission failed:", error)
