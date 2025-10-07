@@ -7,7 +7,7 @@
       :src="hero2Image"
       class="fill-height"
       cover
-      style="opacity: 0.3"
+      style="opacity: 0.5"
     />
 
     <div
@@ -121,7 +121,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue"
 
-import hero2Image from "@/assets/images/hero-05.jpg"
+import hero2Image from "/images/careers-bg.jpg"
 
 const snackbar = ref(false)
 const valid = ref(false)
