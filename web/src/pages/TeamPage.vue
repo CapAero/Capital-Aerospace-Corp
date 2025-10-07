@@ -27,7 +27,7 @@
         <StaffCard
           title="Kevin Beamish"
           subtitle="President/PRM"
-          icon="/images/staff/stock.png"
+          icon="/images/staff/KevinBeamish.png"
         >
           Kevin has over 25 years of experience in the aviation industry, including 15 years in
           management roles. He has held positions such as Director of Maintenance and Director of
@@ -152,7 +152,7 @@
 import { onMounted, ref } from "vue"
 
 import StaffCard from "@/components/team/StaffCard.vue"
-import hero2Image from "@/assets/images/hero-05.jpg"
+import hero2Image from "/images/team-bg.jpg"
 
 const section1Height = ref("1500px")
 
