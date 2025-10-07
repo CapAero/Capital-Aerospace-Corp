@@ -88,6 +88,7 @@
                 ></v-textarea>
 
                 <v-file-input
+                  v-model="file"
                   label="Attach your resume"
                   name="resume"
                   class="mb-4"
@@ -144,11 +145,11 @@ onMounted(() => {
 window.addEventListener("resize", updateContentHeight)
 
 const formData = ref({
-  name: " ",
-  email: " ",
-  message: " ",
+  name: "",
+  email: "",
+  message: "",
 })
-const file = ref(null)
+const file = ref<File | null>(null)
 
 const handleSubmit = async () => {
   const data = new FormData()
@@ -167,7 +168,7 @@ const handleSubmit = async () => {
     })
     if (response.ok) {
       console.log("Resume submitted")
-      formData.value = { name: "", email: "", message: "" }
+      formData.value = { name: " ", email: " ", message: " " }
       file.value = null
     }
   } catch (error) {
