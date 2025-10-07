@@ -144,15 +144,15 @@ onMounted(() => {
 window.addEventListener("resize", updateContentHeight)
 
 const formData = ref({
-  name: "",
-  email: "",
-  message: "",
+  name: " ",
+  email: " ",
+  message: " ",
 })
 const file = ref(null)
 
 const handleSubmit = async () => {
   const data = new FormData()
-  data.append("form-name", "resume")
+  data.append("form-name", "careers")
   data.append("name", formData.value.name)
   data.append("email", formData.value.email)
   data.append("message", formData.value.message)

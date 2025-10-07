@@ -172,9 +172,9 @@ window.addEventListener("resize", updateContentHeight)
 const valid = ref(false)
 const snackbar = ref(false)
 const formData = ref({
-  name: "",
-  email: "",
-  message: "",
+  name: " ",
+  email: " ",
+  message: " ",
 })
 
 const handleSubmit = async () => {
