@@ -71,7 +71,7 @@
         <StaffCard
           title="Damon Juss"
           subtitle="AME & Turbine Specialist"
-          icon="/images/staff/stock.png"
+          icon="/images/staff/damon.png"
         >
          Damon's Bio Coming Soon!
         </StaffCard>
