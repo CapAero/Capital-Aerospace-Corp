@@ -57,7 +57,7 @@
         <StaffCard
           title="Mark Cunningham"
           subtitle="AME"
-          icon="/images/staff/stock.png"
+          icon="/images/staff/mark.png"
         >
           Mark's Bio Coming Soon!
         </StaffCard>
