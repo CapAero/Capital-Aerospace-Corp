@@ -1,7 +1,7 @@
 <template>
   <v-col
     cols="12"
-    md="4"
+    md="3"
     sm="6"
   >
     <v-dialog
@@ -21,7 +21,7 @@
             <v-img
               :src="icon"
               cover
-              height="200"
+              height="300"
             />
           </v-card-text>
 
