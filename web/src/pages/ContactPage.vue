@@ -150,6 +150,9 @@ import { onMounted, ref } from "vue"
 
 import hero2Image from "/images/contact-bg.jpg"
 
+import { useGtag } from "@/use/useGTag"
+const { trackEvent } = useGtag()
+
 const section1Height = ref("100vh")
 
 function updateContentHeight() {
@@ -191,6 +194,13 @@ const handleSubmit = async () => {
       method: "POST",
       body: data,
     })
+
+    trackEvent("ads_conversion_careers_form_1", {
+      event_category: "engagement",
+      event_label: "contact",
+      value: 1,
+    })
+
     if (response.ok) {
       console.log("Contact submitted")
       formData.value = { name: " ", email: " ", message: " " }

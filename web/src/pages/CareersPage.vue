@@ -124,6 +124,9 @@ import { onMounted, ref } from "vue"
 
 import hero2Image from "/images/careers-bg.jpg"
 
+import { useGtag } from "@/use/useGTag"
+const { trackEvent } = useGtag()
+
 const snackbar = ref(false)
 const valid = ref(false)
 const section1Height = ref("100vh")
@@ -166,6 +169,13 @@ const handleSubmit = async () => {
       method: "POST",
       body: data,
     })
+
+    trackEvent("ads_conversion_careers_form_1", {
+      event_category: "engagement",
+      event_label: "careers",
+      value: 1,
+    })
+
     if (response.ok) {
       console.log("Resume submitted")
       formData.value = { name: " ", email: " ", message: " " }
