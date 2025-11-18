@@ -128,9 +128,9 @@
         <StaffCard
           title="Erik Polzin"
           subtitle="AME"
-          icon="/images/staff/ComingSoon.png"
+          icon="/images/staff/erik.png"
         >
-          More coming soon
+          Erik's bio is coming soon!
         </StaffCard>
         <StaffCard
           title="Ryan Purcell"
