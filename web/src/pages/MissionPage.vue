@@ -456,7 +456,7 @@
             <OfferingItem
               offset-md="4"
               title="Honeywell LTS-101 series 1800 Hour Inspection"
-              icon="/images/icons/safety.png"
+              icon="/images/icons/LTS.png"
             >
               More information coming soon.
             </OfferingItem>
