@@ -451,6 +451,15 @@
               program to meet your specific needs, enabling you to concentrate on flight operations
               and safety.
             </OfferingItem>
+
+            
+            <OfferingItem
+              offset-md="4"
+              title="Honeywell LTS-101 series 1800 Hour Inspection"
+              icon="/images/icons/safety.png"
+            >
+              More information coming soon.
+            </OfferingItem>
           </v-row>
         </v-col>
       </v-row>
@@ -493,8 +502,6 @@
               class="mb-6"
               style="border-top: 3px solid #fff; border-radius: 4px"
             ></div>
-            <div class="mb-3">Honeywell LTS-101 series 1800 Hour Inspection</div>
-            <v-divider class="my-3" />
             <div class="mb-3">
               Airbus AS350 12 Year Inspection Completion; Including Full Airframe Painting Facility
             </div>
@@ -595,7 +602,7 @@ function updateContentHeight() {
     if (smAndDown.value) {
       section4Height.value = `${contentHeight + 250}px`
     } else {
-      section4Height.value = "100vh"
+      section4Height.value = "calc(100vh + 80px)"
     }
   }
 
