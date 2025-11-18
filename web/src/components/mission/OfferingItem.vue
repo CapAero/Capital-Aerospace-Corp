@@ -28,6 +28,12 @@
 
           <v-card-text>
             <h3>{{ title }}</h3>
+            <v-btn
+              variant="tonal"
+              color="primary"
+              class="mb-0 mt-2"
+              >Learn more</v-btn
+            >
           </v-card-text>
         </v-card>
       </template>

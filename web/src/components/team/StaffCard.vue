@@ -25,9 +25,15 @@
             />
           </v-card-text>
 
-          <v-card-text>
+          <v-card-text class="pb-2">
             <h3>{{ title }}</h3>
             <p>{{ subtitle }}</p>
+            <v-btn
+              variant="tonal"
+              color="primary"
+              class="mb-0 mt-2"
+              >Learn more</v-btn
+            >
           </v-card-text>
         </v-card>
       </template>
