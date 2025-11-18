@@ -20,7 +20,7 @@
         class="styled-font mb-5 text-uppercase"
         style="font-size: 1.8rem"
       >
-        Profiles and photos are on the way
+      
       </h2>
 
       <v-row class="text-left">
@@ -130,7 +130,7 @@
           subtitle="AME"
           icon="/images/staff/erik.png"
         >
-          Erik's bio is coming soon!
+          Erik serves primarily as Capital Helicopters’ Chief Pilot and is also a highly accomplished AME with strong field maintenance and AOG troubleshooting capabilities. He excels in demanding environments such as drill exploration camps and remote mountain terrain, consistently delivering dependable operational support. His practical experience enhances coordination between flight operations and maintenance teams. Erik is also a committed mentor, supporting the development of our engineering staff and helping them understand real-world challenges within utility helicopter operations.
         </StaffCard>
         <StaffCard
           title="Ryan Purcell"
