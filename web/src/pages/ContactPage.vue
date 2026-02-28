@@ -107,7 +107,7 @@
               <div class="mb-3">
                 <p>Kevin Beamish</p>
                 <p>
-                  Phone: <a href="tel:+18673343777">+1-867-334-3777</a><br />
+                  Phone: <a href="tel:+18674575743">+1-867-457-5743 Ext. 102</a><br />
                   Email: <a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a>
                 </p>
               </div>
