@@ -63,6 +63,19 @@
           and beyond, Kyle ensures our technology and maintenance practices stay at the forefront of
           the industry.
         </StaffCard>
+
+        <StaffCard
+          title="Jim Alran"
+          subtitle="Administration Lead"
+          icon="/images/staff/Jim.jpg"
+        >
+          Jim keeps Capital Aerospace operating with precision and consistency. Working closely with
+          Kevin, he ensures every department has the structure, tools, and support needed to perform
+          at its highest level. By refining workflows and building efficient internal systems,
+          Jim strengthens the company’s operational backbone empowering the technical team to focus
+          on performance while positioning Capital Aerospace for continued growth.
+        </StaffCard>
+        
         <StaffCard
           title="Jay Chow"
           subtitle="Technical Records and Stores Manager"
