@@ -12,8 +12,8 @@
           192 Condor Rd<br />
           Whitehorse, Yukon, Canada Y1A 6E6
         </div>
-        <div><a href="tel:+18673343777">1-867-334-3777</a></div>
-        <div><a href="mailto:k.beamish@capaerocorp.com">k.beamish@capaerocorp.com</a></div>
+        <div><a href="tel:+18674575743">1-867-457-5743</a></div>
+        <div><a href="mailto:info@capaerocorp.com">info@capaerocorp.com</a></div>
       </v-col>
 
       <v-col
