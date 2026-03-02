@@ -1,22 +1,11 @@
 <template>
-  <v-app-bar
-    flat
-    color="transparent"
-    floating
-    scroll-behavior="fade-image inverted"
-    :image="transparent"
-    height="90"
-    class="justify-space-between"
-  >
+  <v-app-bar flat color="transparent" floating scroll-behavior="fade-image inverted" :image="transparent" height="90"
+    class="justify-space-between">
     <v-row>
-      <v-col class="text-left"> <aog class="ml-5 mt-1 mr-auto" /> </v-col>
+      <v-col class="text-left"></v-col>
       <v-col class="text-center">
-        <v-img
-          :src="logoWhite"
-          height="55"
-          :style="{ opacity: imageOpacity }"
-          style="transition: opacity 1s ease-in-out"
-        />
+        <v-img :src="logoWhite" height="55" :style="{ opacity: imageOpacity }"
+          style="transition: opacity 1s ease-in-out" />
       </v-col>
       <v-col class="text-right"> <header-menu button-class="text-white"></header-menu> </v-col>
     </v-row>
