@@ -25,13 +25,19 @@ import DefaultFooter from "@/layouts/DefaultFooter.vue"
 import logoWhite from "@/assets/logos/logo-white.jpg"
 import transparent from "@/assets/logos/transparent-bar-background.png"
 import { onMounted, ref } from "vue"
+import { useDisplay } from "vuetify/lib/composables/display"
 
-const imageOpacity = ref(0)
+const { smAndDown } = useDisplay()
+
+// On mobile, skip the intro animation and show the white logo right away.
+const imageOpacity = ref(smAndDown.value ? 1 : 0)
 
 onMounted(() => {
-  // Start fade-out after 5 seconds
+  if (smAndDown.value) return
+
+  // Fade the white logo in after the center logo fades out.
   setTimeout(() => {
-    imageOpacity.value = 1 // Trigger fade-out
+    imageOpacity.value = 1
   }, 5000)
 })
 </script>

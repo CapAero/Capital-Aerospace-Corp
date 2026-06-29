@@ -1,5 +1,5 @@
 <template>
-  <v-img :src="goldLogo" :width="500" :style="{ opacity: imageOpacity }" style="
+  <v-img v-if="!smAndDown" :src="goldLogo" :width="500" :style="{ opacity: imageOpacity }" style="
       position: fixed;
       top: 45%;
       left: 50%;
@@ -14,7 +14,7 @@
     <router-link
       to="/careers"
       class="hiring-callout"
-      :style="{ maxWidth: smAndDown ? '70%' : 'auto' }"
+      :style="smAndDown ? { right: '20px', maxWidth: 'none' } : { maxWidth: 'auto' }"
     >
       <div class="hiring-callout__badge">WE'RE HIRING</div>
       <div class="hiring-callout__text">
@@ -25,7 +25,7 @@
 
     <div style="position: absolute; top: 20px; right: 20px; text-align: right"
       :style="{ maxWidth: smAndDown ? '90%' : '60%' }">
-      <h2 class="hero-heading" style="margin-top: 200px">HELICOPTER MAINTENANCE TAILORED FOR YOUR OPERATIONS</h2>
+      <h2 class="hero-heading" :style="{ marginTop: smAndDown ? '250px' : '200px' }">HELICOPTER MAINTENANCE TAILORED FOR YOUR OPERATIONS</h2>
       <p class="mt-4" style="font-size: 1.2rem">
         By optimizing maintenance logistics and prioritizing clear communication, we minimize
         downtime and provide a dependable process that supports your business's needs.
