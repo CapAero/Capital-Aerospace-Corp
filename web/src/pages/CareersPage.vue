@@ -71,11 +71,14 @@
                     </div>
 
                     <v-btn
+                      :href="position.pdf"
+                      target="_blank"
+                      rel="noopener"
                       color="primary"
                       size="large"
                       prepend-icon="mdi-file-document-outline"
                       style="opacity: 1;"
-                      @click="openPosition(position)"
+                      @click="trackView(position.title)"
                     >
                       View Job Description
                     </v-btn>
@@ -174,88 +177,11 @@
         </v-col>
       </v-row>
     </div>
-
-    <!-- Job description viewer -->
-    <v-dialog
-      v-model="dialog"
-      max-width="900"
-      scrollable
-    >
-      <v-card class="d-flex flex-column" style="height: 90vh">
-        <v-toolbar
-          color="#152332"
-          density="comfortable"
-        >
-          <v-toolbar-title class="text-white">
-            {{ selectedPosition?.title }}
-          </v-toolbar-title>
-
-          <v-btn
-            v-if="selectedPosition"
-            :href="selectedPosition.pdf"
-            :download="selectedPosition.downloadName"
-            color="primary"
-            variant="flat"
-            prepend-icon="mdi-download"
-            class="mr-2"
-            @click="trackDownload(selectedPosition.title)"
-          >
-            Download
-          </v-btn>
-
-          <v-btn
-            icon="mdi-close"
-            color="white"
-            @click="dialog = false"
-          />
-        </v-toolbar>
-
-        <v-card-text class="pa-0 flex-grow-1 d-flex">
-          <div
-            v-if="loadingPdf"
-            class="d-flex flex-column align-center justify-center flex-grow-1"
-          >
-            <v-progress-circular
-              indeterminate
-              color="primary"
-            />
-            <span class="mt-3 text-grey">Loading…</span>
-          </div>
-
-          <iframe
-            v-else-if="pdfUrl"
-            :src="pdfUrl"
-            title="Job description"
-            style="width: 100%; height: 100%; border: 0"
-          />
-
-          <div
-            v-else
-            class="d-flex flex-column align-center justify-center flex-grow-1 pa-6 text-center"
-          >
-            <p class="mb-4">
-              The preview couldn't be loaded. You can download the job
-              description instead.
-            </p>
-            <v-btn
-              v-if="selectedPosition"
-              :href="selectedPosition.pdf"
-              :download="selectedPosition.downloadName"
-              color="primary"
-              prepend-icon="mdi-download"
-              @click="trackDownload(selectedPosition.title)"
-            >
-              Download
-            </v-btn>
-          </div>
-        </v-card-text>
-      </v-card>
-    </v-dialog>
   </section>
 </template>
 
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref, watch } from "vue"
+import { onMounted, ref } from "vue"
 
 import hero2Image from "/images/careers-bg.jpg"
 
@@ -284,57 +210,8 @@ const positions = ref<Position[]>([
   },
 ])
 
-const dialog = ref(false)
-const selectedPosition = ref<Position | null>(null)
-const pdfUrl = ref<string | null>(null)
-const loadingPdf = ref(false)
-
-function revokePdfUrl() {
-  if (pdfUrl.value) {
-    URL.revokeObjectURL(pdfUrl.value)
-    pdfUrl.value = null
-  }
-}
-
-async function openPosition(position: Position) {
-  selectedPosition.value = position
-  dialog.value = true
-  loadingPdf.value = true
-  revokePdfUrl()
-
+function trackView(title: string) {
   trackEvent("careers_job_description_view", {
-    event_category: "engagement",
-    event_label: position.title,
-    value: 1,
-  })
-
-  // Fetch as a blob so the PDF renders inline even if the server serves it
-  // with a Content-Disposition: attachment header.
-  try {
-    const response = await fetch(position.pdf)
-    if (!response.ok) throw new Error(`Failed to load PDF: ${response.status}`)
-    const blob = await response.blob()
-    pdfUrl.value = URL.createObjectURL(
-      blob.type === "application/pdf"
-        ? blob
-        : new Blob([blob], { type: "application/pdf" })
-    )
-  } catch (error) {
-    console.error(error)
-    pdfUrl.value = null
-  } finally {
-    loadingPdf.value = false
-  }
-}
-
-watch(dialog, (open) => {
-  if (!open) revokePdfUrl()
-})
-
-onBeforeUnmount(revokePdfUrl)
-
-function trackDownload(title: string) {
-  trackEvent("careers_application_download", {
     event_category: "engagement",
     event_label: title,
     value: 1,
