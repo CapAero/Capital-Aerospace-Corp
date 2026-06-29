@@ -74,11 +74,12 @@
                       :href="position.pdf"
                       :download="position.downloadName"
                       color="primary"
-                      size="small"
+                      size="large"
                       prepend-icon="mdi-download"
+                      style="opacity: 1;"
                       @click="trackDownload(position.title)"
                     >
-                      Application
+                      View Job Description
                     </v-btn>
                   </div>
                 </v-list-item>
