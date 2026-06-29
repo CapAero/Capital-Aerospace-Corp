@@ -10,6 +10,19 @@
   <section style="min-height: 100vh !important; position: relative">
     <v-img :src="hero1Image" class="fill-height" cover style="opacity: 0.8" />
 
+    <!-- Hiring callout: top-left attention grabber linking to the careers page -->
+    <router-link
+      to="/careers"
+      class="hiring-callout"
+      :style="{ maxWidth: smAndDown ? '70%' : 'auto' }"
+    >
+      <div class="hiring-callout__badge">WE'RE HIRING</div>
+      <div class="hiring-callout__text">
+        Join the Capital Aerospace team
+        <span class="hiring-callout__cta">View open positions →</span>
+      </div>
+    </router-link>
+
     <div style="position: absolute; top: 20px; right: 20px; text-align: right"
       :style="{ maxWidth: smAndDown ? '90%' : '60%' }">
       <h2 class="hero-heading" style="margin-top: 200px">HELICOPTER MAINTENANCE TAILORED FOR YOUR OPERATIONS</h2>
@@ -80,3 +93,74 @@ onMounted(() => {
   }, 5000)
 })
 </script>
+
+<style scoped>
+.hiring-callout {
+  position: absolute;
+  /* Sit clear of the fixed 90px app-bar, which otherwise captures clicks
+     over the top of the card. */
+  top: 110px;
+  left: 20px;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid gold;
+  background: rgba(21, 35, 50, 0.78);
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+  animation: hiring-pulse 2.2s ease-in-out infinite;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Keep the whole card visually unified as one click target */
+.hiring-callout:hover .hiring-callout__cta {
+  text-decoration: underline;
+}
+
+.hiring-callout:hover {
+  transform: scale(1.04);
+  animation-play-state: paused;
+}
+
+.hiring-callout__badge {
+  background: gold;
+  color: #152332;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.hiring-callout__text {
+  color: white;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+}
+
+.hiring-callout__cta {
+  color: gold;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+@keyframes hiring-pulse {
+  0%,
+  100% {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45), 0 0 0 0 rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45), 0 0 0 10px rgba(255, 215, 0, 0);
+  }
+}
+</style>

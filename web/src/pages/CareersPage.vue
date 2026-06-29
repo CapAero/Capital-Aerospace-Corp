@@ -25,10 +25,69 @@
 
       <!-- Careers form (ENABLED for Netlify) -->
       <v-row>
-        <v-col
-          cols="12"
-          md="6"
-        >
+        <v-col cols="12">
+          <v-card
+            class="mb-5 text-white border-card"
+            color="#ffffff22"
+          >
+            <v-card-title>Open Positions</v-card-title>
+            <v-card-text>
+              <hr class="mb-4" />
+
+              <p
+                v-if="positions.length === 0"
+                class="mb-2"
+              >
+                We don't have any openings posted right now, but we're always
+                interested in hearing from talented people. Submit an application
+                and we'll be in touch.
+              </p>
+
+              <v-list
+                v-else
+                bg-color="transparent"
+                class="pa-0"
+              >
+                <v-list-item
+                  v-for="position in positions"
+                  :key="position.title"
+                  class="px-0 mb-3"
+                >
+                  <div
+                    class="d-flex flex-wrap align-center justify-space-between"
+                    style="gap: 12px"
+                  >
+                    <div>
+                      <div class="text-white font-weight-medium">
+                        {{ position.title }}
+                      </div>
+                      <div
+                        v-if="position.location"
+                        class="text-grey-lighten-1"
+                        style="font-size: 0.85rem"
+                      >
+                        {{ position.location }}
+                      </div>
+                    </div>
+
+                    <v-btn
+                      :href="position.pdf"
+                      :download="position.downloadName"
+                      color="primary"
+                      size="small"
+                      prepend-icon="mdi-download"
+                      @click="trackDownload(position.title)"
+                    >
+                      Application
+                    </v-btn>
+                  </div>
+                </v-list-item>
+              </v-list>
+            </v-card-text>
+          </v-card>
+        </v-col>
+
+        <v-col cols="12">
           <v-card
             class="mb-5 text-white border-card"
             color="#ffffff22"
@@ -130,6 +189,32 @@ const { trackEvent } = useGtag()
 const snackbar = ref(false)
 const valid = ref(false)
 const section1Height = ref("100vh")
+
+// Open positions. Drop the matching application PDF into web/public/assets/
+// and reference it here. Add or remove entries as roles open and close.
+interface Position {
+  title: string
+  location?: string
+  pdf: string
+  downloadName: string
+}
+
+const positions = ref<Position[]>([
+  {
+    title: "Aircraft Maintenance Engineer (AME)",
+    location: "Whitehorse, YT",
+    pdf: "/assets/AME_Job_Description.pdf",
+    downloadName: "AME_Job_Description.pdf",
+  },
+])
+
+function trackDownload(title: string) {
+  trackEvent("careers_application_download", {
+    event_category: "engagement",
+    event_label: title,
+    value: 1,
+  })
+}
 
 function updateContentHeight() {
   const content1 = document.querySelector(".content1")
