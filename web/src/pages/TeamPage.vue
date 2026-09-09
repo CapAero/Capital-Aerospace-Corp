@@ -170,6 +170,13 @@
         >
           We Welcome Tyson to the Team. His profile is on the way!!
         </StaffCard>
+        <StaffCard
+          title="Kraven Ainsworth"
+          subtitle="Apprentice"
+          icon="/images/staff/ComingSoon.png"
+        >
+          We Welcome Kraven to the Team. His profile is on the way!!
+        </StaffCard>
       </v-row>
     </div>
   </section>
