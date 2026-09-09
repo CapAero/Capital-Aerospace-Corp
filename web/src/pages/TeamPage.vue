@@ -163,6 +163,13 @@
           beginning of his journey, Andrew already fits in well with the team and is eager to spend
           as much time as possible around the helicopters in any operational scenario.
         </StaffCard>
+        <StaffCard
+          title="Tyson Prieur"
+          subtitle="Apprentice"
+          icon="/images/staff/ComingSoon.png"
+        >
+          We Welcome Tyson to the Team. His profile is on the way!!
+        </StaffCard>
       </v-row>
     </div>
   </section>
