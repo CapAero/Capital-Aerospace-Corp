@@ -103,18 +103,6 @@
           and projects.
         </StaffCard>
         <StaffCard
-          title="Owen Davis"
-          subtitle="AME"
-          icon="/images/staff/OwenDavis.jpg"
-        >
-          Owen is one of our highly skilled AMEs, bringing a calm maturity and strong mechanical
-          mindset to the team. He thrives in challenging situations and is always the first to offer
-          a helping hand. Owen spends the summer months chasing helicopters across the countryside
-          and the winter months prepping aircraft for seasonal operations. He's particularly adept
-          at FADEC troubleshooting, track and balance, and ensuring peak performance of the Bell 407
-          fleet.
-        </StaffCard>
-        <StaffCard
           title="Damon Juss"
           subtitle="AME & Turbine Specialist"
           icon="/images/staff/damon.png"
