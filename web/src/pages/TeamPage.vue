@@ -181,7 +181,13 @@
           subtitle="Apprentice"
           icon="/images/staff/ComingSoon.png"
         >
-          We Welcome Tyson to the Team. His profile is on the way!!
+          Tyson is an enthusiastic Apprentice Aircraft Maintenance Engineer with a real passion for mechanics 
+          and a drive to keep learning. Curious by nature and always ready to get his hands dirty, he enjoys 
+          understanding how things work and developing his skills alongside the experienced members of the 
+          Capital Aerospace team.
+          When he’s not in the hangar, you’ll probably still find him with a set of tools in his hands, working 
+          on his bike and making sure it’s ready to tackle some of the steepest and technical terrain Whitehorse’s 
+          backyard has to offer.
         </StaffCard>
         <StaffCard
           title="Kraven Ainsworth"
