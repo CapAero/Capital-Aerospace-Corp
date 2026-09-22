@@ -116,7 +116,7 @@
         </StaffCard>
         <StaffCard
           title="Jesse Kirby"
-          subtitle="Apprentice & Turbine Specialist"
+          subtitle="AME & Turbine Specialist"
           icon="/images/staff/JesseKirby.jpg"
         >
           Jesse is a seasoned maintenance specialist with over two decades of experience in utility
@@ -125,6 +125,19 @@
           attention to detail, Jesse handles daily airworthiness and annual maintenance for our
           fleet. He also co-leads the LTS-101 1800 hour inspection program with Damon, applying his
           deep component overhaul knowledge to advance our turbine maintenance capabilities.
+        </StaffCard>
+        <StaffCard
+          title="Peter Murdoch"
+          subtitle="AME"
+          icon="/images/staff/Peter.jpg"
+        >
+          Peter brings 17 years of industry experience to Capital Aerospace Corp, combining deep 
+          technical knowledge with a true passion for helicopter maintenance. A dedicated fan of 
+          the Airbus A-Star, he has built strong expertise working on these aircraft and takes pride 
+          in maintaining them to the highest standards. During the summer, Peter also flies, giving 
+          him valuable operational perspective that enhances his engineering approach. When he’s 
+          not in the hangar or at the controls of a helicopter, you’ll likely find him riding his 
+          motorcycle, always driven by the same focus, precision, and love for performance.
         </StaffCard>
         <StaffCard
           title="Erik Polzin"
