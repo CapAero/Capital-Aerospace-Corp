@@ -169,8 +169,7 @@
           subtitle="Apprentice"
           icon="/images/staff/AndrewSinding.jpg"
         >
-          Andrew is our newest AME Apprentice team members here at Capital Aerospace. Andrew joined
-          us highly motivated, holding a commercial helicopter pilot's license and aspiring to
+          Andrew joined us highly motivated, holding a commercial helicopter pilot's license and aspiring to
           pursue two careers in aviation. His goal is to become a dual-role pilot and AME, and he's
           enthusiastic about learning the ropes from our unique mentors. While he's near the
           beginning of his journey, Andrew already fits in well with the team and is eager to spend
