@@ -179,7 +179,7 @@
         <StaffCard
           title="Tyson Prieur"
           subtitle="Apprentice"
-          icon="/images/staff/ComingSoon.png"
+          icon="/images/staff/Tyson.JPG"
         >
           Tyson is an enthusiastic Apprentice Aircraft Maintenance Engineer with a real passion for mechanics 
           and a drive to keep learning. Curious by nature and always ready to get his hands dirty, he enjoys 
