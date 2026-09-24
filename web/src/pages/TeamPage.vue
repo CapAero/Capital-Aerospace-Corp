@@ -193,7 +193,12 @@
           subtitle="Apprentice"
           icon="/images/staff/ComingSoon.png"
         >
-          We Welcome Kraven to the Team. His profile is on the way!!
+          As one of the newest members of the Capital Aerospace team, Kraven joins us as an Apprentice Aircraft 
+          Maintenance Engineer, bringing a genuine passion for mechanics and an eagerness to keep learning and developing 
+          his skills. Drawn to aviation, he chose helicopters for the unique challenges they bring and, simply put, 
+          because he finds them a lot more interesting.
+          His interest in machines doesn’t stop at the hangar doors. When he’s not working on helicopters, Kraven enjoys 
+          getting out on his motorcycle and making the most of the Yukon roads and scenery.
         </StaffCard>
       </v-row>
     </div>
